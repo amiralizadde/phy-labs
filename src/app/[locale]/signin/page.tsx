@@ -24,7 +24,7 @@ const Signin = () => {
     onSubmit: (values, actions) => {
       console.log(values);
       actions.setSubmitting(false);
-      createUser(values);
+      loginUser(values);
     },
 
     validate: (values) => {
@@ -40,8 +40,8 @@ const Signin = () => {
     },
   });
 
-//   create user function
-  const createUser = async (values: loginUserType) => {
+//   login user function
+  const loginUser = async (values: loginUserType) => {
     const {  email, password } = values;
     const user = {
       email,
@@ -146,10 +146,10 @@ const Signin = () => {
           </button>
         </form>
         <p className="text-sm">
-          {t("isExistAccount")}
-          <Link href={`/${locale}/signin`}>
+          {t("isHaveAccount")}
+          <Link href={`/${locale}/signup`}>
           <span className="font-bold hover:text-primary cursor-pointer">
-            {t("linkIsExistAccount")}
+            {t("linkIsHaveAccount")}
           </span>
           </Link>
         </p>
