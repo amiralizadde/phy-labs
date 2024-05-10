@@ -1,0 +1,18 @@
+.signup__form{
+    @apply  sm:w-1/2 child:my-6 bg-primary2 p-5 rounded-md
+}
+
+.signup__form div{
+    @apply   flex flex-col justify-start items-start
+}
+
+.signup__form div label{
+    @apply text-xs bg-transparent
+}
+
+.signup__form div input{
+    @apply  w-full placeholder:text-sm px-2 py-2 text-sm outline-none bg-gray-50 rounded-sm
+}
+.signup__form button{
+    @apply   w-52 py-1.5 text-sm bg-black hover:bg-primary transition-all duration-200 text-white rounded-sm
+}

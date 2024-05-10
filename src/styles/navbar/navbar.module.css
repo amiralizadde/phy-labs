@@ -1,0 +1,82 @@
+.navbar {
+  @apply  z-50 bg-white fixed top-0 right-0 left-0 h-auto transition-all duration-500 md:px-20 flex items-center justify-center shadow-md;
+}
+.navbar__content {
+  @apply w-full  px-5  relative  flex flex-row-reverse lg:flex-row items-center justify-between;
+}
+
+.navabrItems__content {
+  @apply hidden ms-32 w-full lg:grid grid-cols-5 ;
+}
+
+.menu__content {
+  @apply col-span-4 ;
+}
+
+.menu__content ul {
+  @apply flex items-center justify-center;
+}
+.menu__content ul li {
+  @apply relative  p-2 cursor-pointer  hover:after:right-0 mx-5;
+}
+.submenu {
+  @apply hidden -translate-y-1 z-50  py-5 absolute top-full left-0 right-0 bg-primary2;
+}
+
+
+.menu__content ul li::after {
+  content: "";
+  @apply absolute top-full  h-[1.5px] left-0 right-full  bottom-0  bg-black transition-all duration-300;
+}
+.menuItem{
+  @apply flex items-center justify-between;
+}
+.arrowSubroutes{
+  @apply text-sm text-primary  mx-2;
+}
+
+
+.menuItem:hover,
+ .menuItem:hover + .submenu,
+.submenu:hover{
+  @apply flex items-start justify-center
+}
+
+/* collaps menu */
+
+.collapsMenu__content {
+  @apply lg:hidden absolute top-full  bottom-0 h-[100vh] z-50 transition-all duration-500   overflow-y-auto    sm:w-1/2  min-w-80 child:py-5;
+}
+.collapsMenu__content ul {
+  @apply child:ps-3;
+}
+.collapsMenu__content::-webkit-scrollbar {
+  width: 20px; /* عرض اسکرولبار */
+}
+.collapsMenu__content::-webkit-scrollbar-thumb {
+  background-color: #888; /* رنگ پس زمینه اسکرولبار */
+  border-radius: 4px; /* شکل گرد کردن گوشه‌ها */
+}
+
+/* کم کردن عرض اسکرولبار */
+.collapsMenu__content::-webkit-scrollbar {
+  width: 4px;
+}
+
+@keyframes sidebar {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes sidebarOff {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}

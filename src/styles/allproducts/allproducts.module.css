@@ -1,0 +1,15 @@
+.productImgContent{
+    @apply w-full   bg-primary2 peer-hover:bg-gray-400 flex items-center justify-center rounded-sm;
+}
+
+
+.productBox:hover .productImgContent{
+    @apply bg-gray-300 transition-all duration-200
+}
+.productBox:hover img{
+    @apply scale-95  transition-all duration-200
+}
+
+.productBox:hover .name{
+    @apply text-primary transition-all duration-200 underline underline-offset-4
+}
