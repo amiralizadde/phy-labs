@@ -22,4 +22,14 @@ const verifyPassword = async (password: string, hashedpassword: string) => {
   return isValid;
 };
 
-export { hashPassword, generateToken ,verifyPassword};
+const verifyToken = (token:string) => {
+  try {
+    const validationResult = verify(token, process.env.privateKey!);
+    return validationResult;
+  } catch (err) {
+    console.log("Verify Token Error =>", err);
+    return false;
+  }
+};
+
+export { hashPassword, generateToken ,verifyPassword,verifyToken};

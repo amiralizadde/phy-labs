@@ -29,11 +29,11 @@ export async function POST(req: Request) {
       );
     }
 
-    const token = generateToken({ email: user.email });
+    const token =await generateToken({ email: user.email });
 
     return Response.json(
       { message: "User loggedIn Successfully ..." },
-      { status: 200, headers: { "Set-Cookie": `token=${token}` } }
+      { status: 200, headers: { "Set-Cookie": `token=${token};path=/;httpOnly=true` } }
     );
     
   } catch (error) {

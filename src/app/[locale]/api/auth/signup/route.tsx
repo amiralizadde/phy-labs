@@ -42,7 +42,7 @@ export async function POST(req: Request) {
       role: users?.length > 0 ? "USER" : "ADMIN",
     });
 
-    return Response.json({ message: "Create user Successfully ..." },{ status: 201 ,headers: { 'Set-Cookie': `token=${token}`}})
+    return Response.json({ message: "Create user Successfully ..." },{ status: 201 ,headers: { 'Set-Cookie': `token=${token};path=/;httpOnly=true`}})
   } catch (error) {
     return Response.json({message: "Unknown Internal Server Error ..." , error},{status:500});
   }

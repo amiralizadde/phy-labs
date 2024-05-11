@@ -224,7 +224,7 @@ const Navbar = () => {
 
               <ChangeLanguage />
                   <span className="mx-3 ">
-                    <Link href={`${locale}/signup`}>
+                    <Link href={`/${locale}/signup`}>
                         <FaUser className="cursor-pointer"/>
                     </Link>
                   </span>

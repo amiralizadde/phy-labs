@@ -3,8 +3,9 @@ import { useFormik } from "formik";
 import styles from "../../../styles/p-admin/signup.module.css";
 import { useLocale, useTranslations } from "next-intl";
 import { createUserType, loginUserType } from "@/types/authTypes";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface MyFormValues {
   email: string;
@@ -14,6 +15,7 @@ interface MyFormValues {
 const Signin = () => {
   const t = useTranslations("signin");
   const locale = useLocale();
+  const router = useRouter();
 
   const signinForm = useFormik<MyFormValues>({
     initialValues: {
@@ -40,55 +42,49 @@ const Signin = () => {
     },
   });
 
-//   login user function
+  //   login user function
   const loginUser = async (values: loginUserType) => {
-    const {  email, password } = values;
+    const { email, password } = values;
     const user = {
       email,
       password,
     };
 
-     await fetch(`/${locale}/api/auth/signin`, {
+    await fetch(`/${locale}/api/auth/signin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
-    }).then(res=>{
-        
+    })
+      .then((res) => {
         if (res.status === 200) {
-            swal({
-                title: "Nice",
-                text:"login user successfully",
-                icon: "success",
-              })
+          swal({
+            title: "Nice",
+            text: "login user successfully",
+            icon: "success",
+          });
+          router.replace(`/${locale}/dashboard`);
+        } else if (res.status === 500) {
+          swal({
+            title: "ohh!",
+            text: " Unknown Internal Server Error ",
+            icon: "warning",
+            dangerMode: true,
+          });
+        } else if (res.status === 422) {
+          swal({
+            title: "ohh!",
+            text: " email or password not valid ",
+            icon: "warning",
+            dangerMode: true,
+          });
         }
-        else if(res.status === 500){
-            swal({
-                title: "ohh!",
-                text:" Unknown Internal Server Error ",
-                icon: "warning",
-                dangerMode: true,
-              })
-        }
-        else if(res.status === 422){
-            swal({
-                title: "ohh!",
-                text:" email or password not valid ",
-                icon: "warning",
-                dangerMode: true,
-              })
-        }
-    })
-    .catch(err=>{
-      console.log('fetch data error ->' , err);
-    })
-  
+      })
+      .catch((err) => {
+        console.log("fetch data error ->", err);
+      });
   };
-
-
-
-
 
   return (
     <div className="mt-32">
@@ -102,7 +98,6 @@ const Signin = () => {
           onSubmit={signinForm.handleSubmit}
           className={styles.signup__form}
         >
-         
           {/* Email Field */}
           <div>
             <label htmlFor="email">{t("emaillabel")}</label>
@@ -145,12 +140,12 @@ const Signin = () => {
             {t("button")}
           </button>
         </form>
-        <p className="text-sm">
+        <p className="text-sm my-2">
           {t("isHaveAccount")}
           <Link href={`/${locale}/signup`}>
-          <span className="font-bold hover:text-primary cursor-pointer">
-            {t("linkIsHaveAccount")}
-          </span>
+            <span className="font-bold hover:text-primary cursor-pointer">
+              {t("linkIsHaveAccount")}
+            </span>
           </Link>
         </p>
       </div>

@@ -168,7 +168,7 @@ const Signup = () => {
             {t("button")}
           </button>
         </form>
-        <p className="text-sm">
+        <p className="text-sm my-2">
           {t("isExistAccount")}
           <Link href={`/${locale}/signin`}>
           <span className="font-bold hover:text-primary cursor-pointer">
