@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/[locale]/p-admin/products/page.jsx", "src/app/[locale]/api/p-admin/products/route.jsx", "src/components/template/editor/Editor.jsx"],
   "exclude": ["node_modules"]
 }

@@ -64,5 +64,10 @@
     "isHaveAccount":"آیا حساب کاربری ندارید؟  ",
     "linkIsHaveAccount":"کلیک کن"
 
+  },
+  "allProducts":{
+    "title":" تمام محصولات ",
+    "btn":" مشاهده محصولات "
   }
+
 }

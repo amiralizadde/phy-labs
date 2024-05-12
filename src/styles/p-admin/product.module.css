@@ -1,0 +1,37 @@
+.form__createProduct{
+    @apply p-5 bg-primary2 w-full
+}
+
+.form__createProduct div{
+    @apply  my-3 flex flex-col
+}
+
+.form__createProduct div label{
+    @apply text-sm
+}
+
+.form__createProduct div input,
+.form__createProduct div textarea{
+    @apply py-1 w-full outline-none border  placeholder:text-sm rounded
+}
+
+.form__createProduct  .addProductBtn{
+    @apply  py-2 px-8 bg-green-700 text-white rounded text-sm font-medium
+}
+
+.addFeatureBtn{
+    @apply w-32  text-white py-1 bg-blue-600 rounded mx-auto
+}
+
+.tableFeature{
+    @apply grid grid-cols-1   my-1  rounded p-1;
+}
+.tableFeature tbody tr{
+    @apply rounded px-1 py-1 font-bold
+}
+.tableFeature tbody tr:nth-child(odd){
+    @apply  bg-gray-400 w-full 
+}
+.tableFeature tbody tr:nth-child(even){
+    @apply  bg-gray-300 w-full 
+}

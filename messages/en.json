@@ -64,7 +64,13 @@
       "isHaveAccount":"don't have account?",
       "linkIsHaveAccount":"Click here"
 
+    },
+    "allProducts":{
+      "title":"all products",
+      "btn":" View All Products"
     }
+
+
 
   
 }
