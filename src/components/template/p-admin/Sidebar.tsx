@@ -16,7 +16,7 @@ const Sidebar =async ({user}:SidebarPropsType) => {
             <Link href={`/${locale}/p-admin/products`} className='font-bold'>  محصولات   </Link>
         </div>
         <div className=' hover:border-b-2 py-1 hover:border-primary'>
-            <Link href={`/${locale}/dashboard/orders`} className='font-bold'>  اخبار  </Link>
+            <Link href={`/${locale}/p-admin/news`} className='font-bold'>  اخبار  </Link>
         </div>
     </div>
   )

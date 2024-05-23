@@ -1,5 +1,8 @@
+.productBox{
+    @apply flex flex-col items-center justify-between p-5 hover:cursor-pointer  
+}
 .productImgContent{
-    @apply w-full   bg-primary2 peer-hover:bg-gray-400 flex items-center justify-center rounded-sm;
+    @apply w-full h-[50vw] sm:h-[25vw] lg:h-[15vw]  bg-gradient-to-t from-indigo-200 peer-hover:bg-gray-400 flex items-center justify-center rounded-sm;
 }
 
 

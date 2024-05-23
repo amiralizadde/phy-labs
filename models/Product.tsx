@@ -1,20 +1,28 @@
 import mongoose from "mongoose";
 
-const schema = new mongoose.Schema({
 
-    name:{
-        type:String,
-        required:true
-    },
-    description:{
-        type:String,
-        required:true
-    },
-    image: {
+
+const schema = new mongoose.Schema({
+  locale: {
+    type: String,
+    required: true,
+  },
+  headline: {
+    type: String,
+    required: true,
+  },
+  products: [
+    {
+      name: {
         type: String,
         required: true,
-    },
-    features: [
+      },
+      description: {
+        type: String,
+        required: true,
+      },
+      
+      features: [
         {
           title: {
             type: String,
@@ -25,10 +33,15 @@ const schema = new mongoose.Schema({
             required: true,
           },
         },
-      ]
+      ],
+      image: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
+});
 
-})
+const Productmodel =mongoose.models.product || mongoose.model("product", schema);
 
-const Productmodel =mongoose.models.Product || mongoose.model('Product',schema)
-
-export default Productmodel
+export default Productmodel;

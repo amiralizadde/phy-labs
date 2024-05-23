@@ -1,6 +1,7 @@
 .text::before{
     content: "";
+    margin: 0 -10px;
 }
 .text{
-   @apply  px-2 relative  font-bold xs:text-2xl xs:font-medium  before:absolute before:left-0 before:w-1 before:-translate-x-2 before:h-8 before:bg-primary;
+   @apply  px-2 relative  font-bold xs:text-2xl xs:font-medium  before:absolute  before:w-1  before:h-full before:bg-primary;
 }

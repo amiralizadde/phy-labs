@@ -26,7 +26,7 @@ export async function POST(req) {
         name,
         description,
         features:JSON.parse(features),
-        image: `http://localhost:3000/uploads/products/${filename}`,
+        image: `/uploads/products/${filename}`,
       });
       console.log('product =>',product);
       return Response.json(

@@ -1,0 +1,31 @@
+.contact{
+  @apply mt-32
+}
+.headerContact{
+    background-image: url('../../../public/assets/contact.jpg');
+    background-position: center;
+    @apply bg-black/25 h-96 py-24 px-10 grid grid-cols-1 md:grid-cols-3 gap-5 child:rounded-md child:bg-gray-200/75 mt-5 child:py-5 child:px-3 child:flex child:flex-col  child:items-center child:justify-between
+}
+
+
+.formContent{
+    /* background-image: url('../../../public/assets/contact.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover; */
+    @apply  h-screen flex items-center justify-center
+}
+.createUserMsgForm{
+    @apply bg-primary2 shadow-2xl w-1/2  p-5 rounded-md child:my-3
+}
+.formContent div label{
+    @apply text-sm text-primary2
+}
+
+.formContent div input{
+    @apply w-full py-2 px-3 rounded-md outline-none  bg-gray-400/50 placeholder:text-black
+}
+
+.formContent  button{
+    @apply bg-gray-400/50 py-2 px-5 rounded-md w-full hover:bg-primary hover:text-white transition-all duration-200
+}

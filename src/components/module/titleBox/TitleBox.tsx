@@ -6,8 +6,8 @@ type TitleBoxProps = {
 
 const TitleBox = ({ title }: TitleBoxProps) => {
   return (
-    <div>
-      <p className={styles.text}>{title}</p>
+    <div >
+      <p  className={styles.text}>{title}</p>
     </div>
   );
 };

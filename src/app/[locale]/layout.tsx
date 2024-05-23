@@ -3,6 +3,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import {NextIntlClientProvider, useMessages} from 'next-intl';
 import {notFound} from 'next/navigation';
+import Footer from '@/components/module/footer/Footer';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default function RootLayout({ children, params: {locale}}:{ children: Rea
         <div>
           {children}
         </div>
+        <Footer />
       </NextIntlClientProvider>
       </body>
     </html>

@@ -9,17 +9,19 @@ const ChangeLanguage = () => {
     const locale = useLocale();
     const router = useRouter()
 
-    const changeLang=(e: React.ChangeEvent<HTMLSelectElement>)=>{
-        const nextLocale = e.target.value;
-        router.replace(`/${nextLocale}`)
-    }
+    // const changeLang=(e: React.ChangeEvent<HTMLSelectElement>)=>{
+    //     const nextLocale = e.target.value;
+    //     router.replace(`/${nextLocale}`)
+    // }
 
   return (
-    <div>
-        <select onChange={changeLang} defaultValue={locale} className='outline-none'>
+    <div className='flex items-center child:mx-2 child:font-medium child:cursor-pointer'>
+        {/* <select onChange={changeLang} defaultValue={locale} className='outline-none'>
             <option value="en" > English </option>
             <option value="fa"> فارسی </option>
-        </select>
+        </select> */}
+        <button onClick={(e)=>router.replace(`/en`)}>EN</button>
+        <button onClick={(e)=>router.replace(`/fa`)}>FA</button>
     </div>
   )
 }

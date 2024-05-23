@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import swal from "sweetalert";
 import Link from "next/link";
 import { createProductType } from "@/types/productTypes";
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CKeditor from "@/components/template/editor/Editor";
 
 // interface MyFormValues {

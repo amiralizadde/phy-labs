@@ -1,0 +1,11 @@
+/* ____News_____ */
+.newsbox{
+    @apply relative shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer p-4
+}
+.arrowbox::before{
+    content: "";
+    @apply w-[2px] h-4 absolute bottom-0 rotate-[30deg] -left-2 bg-primary
+}
+.arrowbox{
+    @apply absolute right-2 bottom-2 text-xs 
+}

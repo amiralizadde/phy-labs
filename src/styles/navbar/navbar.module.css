@@ -6,7 +6,7 @@
 }
 
 .navabrItems__content {
-  @apply hidden ms-32 w-full lg:grid grid-cols-5 ;
+  @apply hidden  w-full lg:grid grid-cols-5 ;
 }
 
 .menu__content {
@@ -17,10 +17,10 @@
   @apply flex items-center justify-center;
 }
 .menu__content ul li {
-  @apply relative  p-2 cursor-pointer  hover:after:right-0 mx-5;
+  @apply relative font-medium text-lg p-2 cursor-pointer  hover:after:right-0 mx-5 hover:text-primary;
 }
 .submenu {
-  @apply hidden -translate-y-1 z-50  py-5 absolute top-full left-0 right-0 bg-primary2;
+  @apply hidden -translate-y-1 z-50  py-5 absolute top-[93%] left-0 right-0 bg-primary2;
 }
 
 
@@ -32,7 +32,10 @@
   @apply flex items-center justify-between;
 }
 .arrowSubroutes{
-  @apply text-sm text-primary  mx-2;
+  @apply text-sm text-primary  mx-2 rotate-90 ;
+}
+.menuItem:hover .arrowSubroutes{
+  @apply translate-y-2 transition-all duration-200 
 }
 
 

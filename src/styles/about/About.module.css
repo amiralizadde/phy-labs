@@ -1,0 +1,19 @@
+.members_body{
+    @apply col-start-2 col-span-8 
+}
+.title{
+    @apply bg-primary rounded-t-full text-xl text-center py-2 text-white my-2
+}
+.members_items{
+    @apply flex flex-col items-center  bg-gradient-to-t from-indigo-100 rounded-xl my-5
+}
+.members_items p{
+    @apply text-sm my-1
+}
+
+.members_items div{
+    @apply  mt-2 text-center
+}
+.membersItems_textContent p:first-child{
+    @apply font-medium 
+}

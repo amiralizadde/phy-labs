@@ -14,6 +14,7 @@ import Link from "next/link";
 
 import { useTranslations } from "next-intl";
 import ChangeLanguage from "../changeLang/ChangeLanguage";
+import Image from "next/image";
 
 
 
@@ -40,7 +41,7 @@ const Navbar = () => {
     {
       id: "2",
       menuTitle: "Products",
-      route:'allProducts',
+      route:'products',
       category: [
         {
           id: "1",
@@ -98,7 +99,7 @@ const Navbar = () => {
       route:"services"
     },
     { id: "4", menuTitle: "News",route:"news" },
-    { id: "5", menuTitle: "About",route:"about" },
+    { id: "5", menuTitle: "About",route:"about/companyMembers" },
     { id: "6", menuTitle: "Contact",route:"contact" },
   ];
   const menusDataFa: menuTypes[] = [
@@ -106,7 +107,7 @@ const Navbar = () => {
     {
       id: "2",
       menuTitle: "محصولات",
-      route:'allProducts',
+      route:'products',
       category: [
         {
           id: "1",
@@ -182,7 +183,7 @@ const Navbar = () => {
 
   return (
     <div className={styles.navbar}>
-      <div className=" w-full h-full flex flex-col items-center justify-center p-5 ">
+      <div className=" w-full h-full flex flex-col items-center justify-center p-2 ">
         <div className={styles.navbar__content}>
           {/* search */}
           <div
@@ -195,17 +196,19 @@ const Navbar = () => {
               <IoIosSearch className="text-2xl cursor-pointer" />
             )}
           </div>
-          <div> Logo</div>
+          <div className=""> 
+            <Image src="/assets/logo/PhyLabs.png" width={1000}  height={500} alt="phy_labs logo" className="w-[60px] h-auto" />
+          </div>
           <div className={styles.navabrItems__content}>
             <div className={styles.menu__content}>
               <ul>
                 { menuData?.map((menuItem) => (
                   <div key={menuItem.id}>
                     <li  className={styles.menuItem}>
-                      <Link href={menuItem.route} className="flex items-center justify-between"><span>{menuItem.menuTitle}</span>
-                        {/* {menuItem.category && (
+                      <Link href={`/${locale}/${menuItem.route}`} className="flex items-center justify-between"><span>{menuItem.menuTitle}</span>
+                        {menuItem.category && (
                           <MdArrowForwardIos className={styles.arrowSubroutes} />
-                        )} */}
+                        )}
                       </Link>
                     </li>
                     {menuItem.category && (
