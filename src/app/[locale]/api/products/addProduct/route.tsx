@@ -27,16 +27,18 @@ export async function POST(request: Request) {
 
     await writeFile(imgPath, buffer);
 
+   
+    
+    
     const newProduct = {
       name,
       description,
-      features: [
-        { title: "Model:", feature: "KCM-A-01" },
-        { title: "Weight::", feature: "110 grams" },
-        { title: "Material:::", feature: "Aluminum 7000" },
-      ],
+      features:JSON.parse(features),
       image: `/uploads/products/${filename}`,
     };
+
+    console.log('newProduct ->' ,newProduct);
+    
 
     if (headline === null) {
       return Response.json({ message: "Enter valid data" }, { status: 422 });
@@ -48,9 +50,12 @@ export async function POST(request: Request) {
     }
 
     const Headline = await Productmodel.findOne({
-      locale: JSON.parse(locale),
-      headline: JSON.parse(headline),
+      locale: locale,
+      headline: headline,
     });
+
+    console.log(' Headline ->' ,Headline);
+    
 
     if (Boolean(Headline) === false) {
       return Response.json(
@@ -63,13 +68,9 @@ export async function POST(request: Request) {
       const category = await Productmodel.findById(Headline._id);
       category.products.push(newProduct);
       await category.save();
-      return Response.json(
-        { message: "Add  Product Successfully" },
-        { status: 200 }
-      );
     }
 
-    return Response.json({ message: "ok" }, { status: 200 });
+    return Response.json({ message: "Add  Product Successfully" }, { status: 200 });
   } catch (error) {
     return Response.json(
       { message: "Unknown Internal Server Error", error },

@@ -17,3 +17,10 @@ export type productType={
     image:string
     features:featureType[]
 }
+
+export type product={
+    _id:string
+    locale:string
+    headline:string
+    products:productType[]
+}

@@ -1,9 +1,16 @@
 "use client"
 import React, { useEffect, useRef } from "react";
 
+type CKeditorProps = {
+    onChange: (data: string) => void;
+    editorLoaded: boolean;
+    name: string;
+    value: string;
+  };
 
-export default function CKeditor({ onChange, editorLoaded, name, value }) {
-    const editorRef = useRef();
+
+export default function CKeditor({ onChange, editorLoaded, name, value }:CKeditorProps) {
+    const editorRef = useRef<{ CKEditor:any; ClassicEditor:any} | null>(null);
     const { CKEditor, ClassicEditor } = editorRef.current || {};
 useEffect(() => {
     editorRef.current = {
@@ -19,7 +26,7 @@ useEffect(() => {
                     name={name}
                     editor={ClassicEditor}
                     data={value}
-                    onChange={(event, editor) => {
+                    onChange={(event : any, editor:any) => {
                         const data = editor.getData();
                         onChange(data);
                     }}

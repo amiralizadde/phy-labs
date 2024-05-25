@@ -6,18 +6,20 @@ export async function DELETE(request: Request) {
     connectToDB();
     const { locale, productID, headlineID } = await request.json();
 
-    console.log("locale ->", locale);
-    console.log("headlineID ->", headlineID);
-    console.log("productID ->", productID);
-
     if (locale === null || productID === null) {
       return Response.json(
         { message: "Please Enter Valid Data" },
         { status: 200 }
       );
     }
-
+    console.log('locale ->' , locale);
+    console.log('productID ->' , productID);
+    console.log('headlineID ->' , headlineID);
+    
     const headline = await Productmodel.findOne({ _id: headlineID, locale });
+
+    console.log('headline ->' ,headline);
+    
 
     const isHasProduct = headline.products.some((product: any) => {
       return String(product._id) === productID;
@@ -44,7 +46,6 @@ export async function DELETE(request: Request) {
         { new: true } // برای دریافت مقدار جدید پس از به‌روزرسانی
       );
 
-      console.log("updatedHeadline ->", updatedHeadline);
     }
 
     return Response.json(

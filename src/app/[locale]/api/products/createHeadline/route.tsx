@@ -9,6 +9,10 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { locale, headline } = body;
 
+    console.log('locale ->' ,locale);
+    console.log('headline ->' ,headline);
+    
+
     if (!locale.trim() || !headline.trim()) {
       return Response.json({ message: "Enter valid data" }, { status: 422 });
     }
@@ -18,7 +22,6 @@ export async function POST(request: Request) {
 
    
     if (Boolean(isHeadline) === true) {
-    console.log('isHeadline ->' ,isHeadline);
      return  Response.json({ message: "This Headline is already existed" },{ status: 422 }); 
     }
     
