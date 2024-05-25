@@ -34,11 +34,11 @@ const PanelAdminLayout = async ({children}:{children: React.ReactNode}) => {
         <p className="text-3xl  font-medium text-gray-800"> Panel Admin </p>
       </div>
       <main>
-        <div className="grid grid-cols-6 ">
-          <div className='col-span-1 border border-black'>
+        <div className="grid grid-cols-7 bg-primary2">
+          <div className='col-span-1 bg-gradient-to-r from-[#9b9b9bfc]'>
             <Sidebar user={user} />
           </div>
-          <div className="rounded-md col-span-5 bg-primary2"> 
+          <div className="rounded-md col-span-6 "> 
              {children} 
           </div>
         </div>

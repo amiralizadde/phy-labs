@@ -48,13 +48,13 @@ const AllProducts = () => {
   };
 
   return (
-    <div className="bg-[#3232]">
-      <table className=" bg-[#3232] p-3 w-full">
+    <div className="bg-[#3232] ">
+      <table className=" bg-[#3232] p-5   w-full">
         <thead>
-          <tr className="">
-            <th> headline </th>
-            <th> product </th>
-            <th> action </th>
+          <tr className=" child:py-1 ">
+            <th className="text-start"> headline </th>
+            <th className="text-start"> product </th>
+            <th className="text-center"> action </th>
           </tr>
         </thead>
         <tbody className="p-2">
@@ -63,7 +63,7 @@ const AllProducts = () => {
               <tr className=" text-sm font-medium my-3 child:py-2 child:px-2 ">
                 <td className="font-medium">{category.headline}</td>
                 <td className="font-medium">{product.name}</td>
-                <td>
+                <td className=" flex items-center justify-center">
                   <button
                     onClick={() => removeProduct(product._id,category._id)}
                     className="bg-primary py-1 px-2 text-white text-xs"
