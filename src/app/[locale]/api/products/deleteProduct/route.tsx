@@ -12,13 +12,10 @@ export async function DELETE(request: Request) {
         { status: 200 }
       );
     }
-    console.log('locale ->' , locale);
-    console.log('productID ->' , productID);
-    console.log('headlineID ->' , headlineID);
     
     const headline = await Productmodel.findOne({ _id: headlineID, locale });
 
-    console.log('headline ->' ,headline);
+   
     
 
     const isHasProduct = headline.products.some((product: any) => {

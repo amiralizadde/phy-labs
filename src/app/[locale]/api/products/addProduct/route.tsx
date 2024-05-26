@@ -27,15 +27,18 @@ export async function POST(request: Request) {
 
     await writeFile(imgPath, buffer);
 
-   
+    // if (features !== null) {
+      
+      const newProduct = {
+        name,
+        description,
+        features:features ? JSON.parse(features as string ):[],
+        image: `/uploads/products/${filename}`,
+      };
+
+    // }
     
     
-    const newProduct = {
-      name,
-      description,
-      features:JSON.parse(features),
-      image: `/uploads/products/${filename}`,
-    };
 
     console.log('newProduct ->' ,newProduct);
     
@@ -54,7 +57,6 @@ export async function POST(request: Request) {
       headline: headline,
     });
 
-    console.log(' Headline ->' ,Headline);
     
 
     if (Boolean(Headline) === false) {

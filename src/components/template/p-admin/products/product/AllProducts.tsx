@@ -26,15 +26,13 @@ const AllProducts = () => {
   };
 
   const removeProduct = async(productID: string, headlineID: string) => {
-    console.log('productID ->' , productID);
-    console.log('categoryID ->' , headlineID);
+    
     
     let data = {
       locale,
       productID,
       headlineID
     };
-    console.log('data ->' , data);
     await fetch(`/${locale}/api/products/deleteProduct`,{
         method:"DELETE",
         headers:{
