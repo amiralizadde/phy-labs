@@ -1,9 +1,9 @@
 type productsTpes = {
-    id:string , 
+    _id:string , 
     name:string
 }
 export type menuCategoryTypes = {
-    id:string ,
+    _id:string ,
     headline : string,
     products?:productsTpes[]
 

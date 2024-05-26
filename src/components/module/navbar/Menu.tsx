@@ -12,14 +12,14 @@ const Menu = ({menu}:MenuProps) => {
         <table className=''>
             <thead className='mb-2 '>
                 <tr className='font-medium text-sm py-3 '>
-                    <td>{menu.headline}</td>
+                    <th className='text-black hover:cursor-text'>{menu.headline}</th>
                 </tr>
             </thead>
             <tbody className=' px-2'>
 
             {menu.products?.map(product=>(
-                <tr key={product.id} className='px-2'>
-                    <td className='text-sm py-1 ps-2' >
+                <tr key={product._id} className='px-2'>
+                    <td className='text-sm py-1 ps-2 text-black hover:text-primary' >
                         {product.name}
                     </td>
                 </tr>

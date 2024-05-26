@@ -15,6 +15,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import ChangeLanguage from "../changeLang/ChangeLanguage";
 import Image from "next/image";
+import { product } from "@/types/productTypes";
 
 
 
@@ -36,149 +37,170 @@ const Navbar = () => {
 
 
 
-  const menusDataEn: menuTypes[] = [
-    { id: "1", menuTitle: "Home" , route:"/" },
-    {
-      id: "2",
-      menuTitle: "Products",
-      route:'products',
-      category: [
-        {
-          id: "1",
-          headline: "3D Measurement",
-          products: [
-            { id: "1", name: "Optical 3D Nano Profilometer" },
-            { id: "2", name: "Optical 3D Micro Profilometer" },
-          ],
-        },
-        {
-          id: "2",
-          headline: "Spectrometer",
-          products: [
-            { id: "1", name: "Spectrometer" },
-            { id: "2", name: "Spectrophotometer" },
-          ],
-        },
-        {
-          id: "3",
-          headline: "Opto Electronic",
-          products: [
-            { id: "1", name: "Spatial Light Modulator" },
-            { id: "2", name: "RGB LED Light Source" },
-            { id: "3", name: "Diode Laser Source" },
-          ],
-        },
-        {
-          id: "4",
-          headline: "Opto Mechanic",
-          products: [
-            { id: "1", name: "  Motorized Translation Stage" },
-            { id: "2", name: "Piezo Nano Positioner" },
-            { id: "3", name: "Manual Linear Nano-Positioner" },
-            { id: "4", name: "Miniature Manual Linear Translation Stages" },
-            { id: "5", name: "Manual Linear Translation Stages" },
-            { id: "6", name: "Spatial Filter" },
-            { id: "7", name: "Kinematic Mount Plate" },
-            { id: "8", name: "Kinematic Circular Mount" },
-          ],
-        },
-        {
-          id: "5",
-          headline: "Optic Elements",
-          products: [
-            { id: "1", name: "Precision Pinhole" },
-            { id: "2", name: "Lens Collection" },
-            { id: "3", name: "Optical Flat Mirrors" },
-          ],
-        },
-      ],
-    },
-    {
-      id: "3",
-      menuTitle: "Services",
-      route:"services"
-    },
-    { id: "4", menuTitle: "News",route:"news" },
-    { id: "5", menuTitle: "About",route:"about/companyMembers" },
-    { id: "6", menuTitle: "Contact",route:"contact" },
-  ];
-  const menusDataFa: menuTypes[] = [
-    { id: "1", menuTitle: " صفحه اصلی " , route:"/" },
-    {
-      id: "2",
-      menuTitle: "محصولات",
-      route:'products',
-      category: [
-        {
-          id: "1",
-          headline: " طیف سنج ",
-          products: [
-            { id: "1", name: " طیف سنج  " },
-            { id: "2", name: " طیف سنج  نوری " },
-          ],
-        },
-        {
-          id: "2",
-          headline: " پروفایلومتر ",
-          products: [
-            { id: "1", name: "پروفایلومتر نوری سه‌بعدی با دقت میکرومتری (میکروپروفایلومتر)" },
-            { id: "2", name: "پروفایلومتر نوری سه‌بعدی با دقت نانومتری (نانوپروفایلومتر)" },
-          ],
-        },
-        {
-          id: "3",
-          headline: "اپتوالکترونیک",
-          products: [
-            { id: "1", name: "دوربین پایش کوره دمای بالا" },
-            { id: "2", name: "مدولاتور فضایی نور" },
-            { id: "3", name: "منبع نور ال ای دی سه رنگ" },
-            { id: "4", name: "منبع نور لیزر دیود" },
-          ],
-        },
-        {
-          id: "4",
-          headline: "اپتومکانیک",
-          products: [
-            { id: "1", name: "جابجاگر خطی موتوری" },
-            { id: "2", name: "نانوجابجاگر پیزوالکتریک" },
-            { id: "3", name: "نانوجابجاگر خطی دستی" },
-            { id: "4", name: "جابجاگرهای مینیاتوری یک، دو و سه‌بعدی" },
-            { id: "5", name: "جابجاگرهای خطی دستی یک، دو و سه‌بعدی" },
-            { id: "6", name: "نگهدارنده قابل تنظیم" },
-            { id: "7", name: "نگهدارنده قابل تنظیم قطعات مدور" },
-            { id: "8", name: "پالایه فضایی" },
-          ],
-        },
+  // const menusDataEn: menuTypes[] = [
+  //   { id: "1", menuTitle: "Home" , route:"/" },
+  //   {
+  //     id: "2",
+  //     menuTitle: "Products",
+  //     route:'products',
+  //     category: [
+  //       {
+  //         id: "1",
+  //         headline: "3D Measurement",
+  //         products: [
+  //           { id: "1", name: "Optical 3D Nano Profilometer" },
+  //           { id: "2", name: "Optical 3D Micro Profilometer" },
+  //         ],
+  //       },
+  //       {
+  //         id: "2",
+  //         headline: "Spectrometer",
+  //         products: [
+  //           { id: "1", name: "Spectrometer" },
+  //           { id: "2", name: "Spectrophotometer" },
+  //         ],
+  //       },
+  //       {
+  //         id: "3",
+  //         headline: "Opto Electronic",
+  //         products: [
+  //           { id: "1", name: "Spatial Light Modulator" },
+  //           { id: "2", name: "RGB LED Light Source" },
+  //           { id: "3", name: "Diode Laser Source" },
+  //         ],
+  //       },
+  //       {
+  //         id: "4",
+  //         headline: "Opto Mechanic",
+  //         products: [
+  //           { id: "1", name: "  Motorized Translation Stage" },
+  //           { id: "2", name: "Piezo Nano Positioner" },
+  //           { id: "3", name: "Manual Linear Nano-Positioner" },
+  //           { id: "4", name: "Miniature Manual Linear Translation Stages" },
+  //           { id: "5", name: "Manual Linear Translation Stages" },
+  //           { id: "6", name: "Spatial Filter" },
+  //           { id: "7", name: "Kinematic Mount Plate" },
+  //           { id: "8", name: "Kinematic Circular Mount" },
+  //         ],
+  //       },
+  //       {
+  //         id: "5",
+  //         headline: "Optic Elements",
+  //         products: [
+  //           { id: "1", name: "Precision Pinhole" },
+  //           { id: "2", name: "Lens Collection" },
+  //           { id: "3", name: "Optical Flat Mirrors" },
+  //         ],
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     id: "3",
+  //     menuTitle: "Services",
+  //     route:"services"
+  //   },
+  //   { id: "4", menuTitle: "News",route:"news" },
+  //   { id: "5", menuTitle: "About",route:"about/companyMembers" },
+  //   { id: "6", menuTitle: "Contact",route:"contact" },
+  // ];
+  // const menusDataFa: menuTypes[] = [
+  //   { id: "1", menuTitle: " صفحه اصلی " , route:"/" },
+  //   {
+  //     id: "2",
+  //     menuTitle: "محصولات",
+  //     route:'products',
+  //     category: [
+  //       {
+  //         id: "1",
+  //         headline: " طیف سنج ",
+  //         products: [
+  //           { id: "1", name: " طیف سنج  " },
+  //           { id: "2", name: " طیف سنج  نوری " },
+  //         ],
+  //       },
+  //       {
+  //         id: "2",
+  //         headline: " پروفایلومتر ",
+  //         products: [
+  //           { id: "1", name: "پروفایلومتر نوری سه‌بعدی با دقت میکرومتری (میکروپروفایلومتر)" },
+  //           { id: "2", name: "پروفایلومتر نوری سه‌بعدی با دقت نانومتری (نانوپروفایلومتر)" },
+  //         ],
+  //       },
+  //       {
+  //         id: "3",
+  //         headline: "اپتوالکترونیک",
+  //         products: [
+  //           { id: "1", name: "دوربین پایش کوره دمای بالا" },
+  //           { id: "2", name: "مدولاتور فضایی نور" },
+  //           { id: "3", name: "منبع نور ال ای دی سه رنگ" },
+  //           { id: "4", name: "منبع نور لیزر دیود" },
+  //         ],
+  //       },
+  //       {
+  //         id: "4",
+  //         headline: "اپتومکانیک",
+  //         products: [
+  //           { id: "1", name: "جابجاگر خطی موتوری" },
+  //           { id: "2", name: "نانوجابجاگر پیزوالکتریک" },
+  //           { id: "3", name: "نانوجابجاگر خطی دستی" },
+  //           { id: "4", name: "جابجاگرهای مینیاتوری یک، دو و سه‌بعدی" },
+  //           { id: "5", name: "جابجاگرهای خطی دستی یک، دو و سه‌بعدی" },
+  //           { id: "6", name: "نگهدارنده قابل تنظیم" },
+  //           { id: "7", name: "نگهدارنده قابل تنظیم قطعات مدور" },
+  //           { id: "8", name: "پالایه فضایی" },
+  //         ],
+  //       },
 
        
 
 
 
-        {
-          id: "5",
-          headline: " المان‌های اپتیکی",
-          products: [
-            { id: "1", name: "مجموعه عدسی اپتیکی" },
-            { id: "2", name: "مجموعه آینه اپتیکی" },
-            { id: "3", name: "روزنه ریز دقیق (پین‌هول)" },
-          ],
-        },
-      ],
-    },
-    {
-      id: "3",
-      menuTitle: "خدمات",
-      route:"services"
-    },
-    { id: "4", menuTitle: "اخبار",route:"news" },
-    { id: "5", menuTitle: "درباره ما",route:"about" },
-    { id: "6", menuTitle: "تماس با ما",route:"contact" },
-  ];
-  useEffect(()=>{
+  //       {
+  //         id: "5",
+  //         headline: " المان‌های اپتیکی",
+  //         products: [
+  //           { id: "1", name: "مجموعه عدسی اپتیکی" },
+  //           { id: "2", name: "مجموعه آینه اپتیکی" },
+  //           { id: "3", name: "روزنه ریز دقیق (پین‌هول)" },
+  //         ],
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     id: "3",
+  //     menuTitle: "خدمات",
+  //     route:"services"
+  //   },
+  //   { id: "4", menuTitle: "اخبار",route:"news" },
+  //   { id: "5", menuTitle: "درباره ما",route:"about" },
+  //   { id: "6", menuTitle: "تماس با ما",route:"contact" },
+  // ];
+  // useEffect(()=>{
 
-    locale==='en' ? setMenuData(menusDataEn) : setMenuData(menusDataFa)
+  //   locale==='en' ? setMenuData(menusDataEn) : setMenuData(menusDataFa)
     
-  },[])
+  // },[])
+
+
+  const [allCategory, setAllCategory] = useState<product[] | null>(null);
+
+  useEffect(() => {
+    getAllProducts();
+  }, []);
+
+  const getAllProducts = async () => {
+    await fetch(`/${locale}/api/products/getAllProducts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(locale),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setAllCategory(data.body);
+      });
+  };
   
 
   return (
@@ -202,7 +224,47 @@ const Navbar = () => {
           <div className={styles.navabrItems__content}>
             <div className={styles.menu__content}>
               <ul>
-                { menuData?.map((menuItem) => (
+
+                  <li className={styles.menuItem}>
+                    <Link href={`/${locale}/`}>
+                      <span>Home</span>
+                    </Link>
+                  </li>
+                  <li className={styles.menuItem}>
+                     <Link href={`/${locale}/products`} className="flex items-center justify-between">
+                       <span>Products</span>
+                       <MdArrowForwardIos className={styles.arrowSubroutes} />
+                     </Link>
+                     {allCategory?.length && (
+                      <div className={styles.submenu}>
+                        {allCategory?.map((categoryItem) => (
+                          <Menu key={categoryItem._id} menu={categoryItem} />
+                        ))}
+                      </div>
+                    )}
+                  </li>
+                  <li className={styles.menuItem}>
+                    <Link href={`/${locale}/services`}>
+                      <span>Services</span>
+                    </Link>
+                  </li>
+                  <li className={styles.menuItem}>
+                    <Link href={`/${locale}/news`}>
+                      <span>News</span>
+                    </Link>
+                  </li>
+                  <li className={styles.menuItem}>
+                    <Link href={`/${locale}/about/companyMembers`}>
+                      <span>About</span>
+                    </Link>
+                  </li>
+                  <li className={styles.menuItem}>
+                    <Link href={`/${locale}/contact`}>
+                      <span>Contact</span>
+                    </Link>
+                  </li>
+
+                {/* { menuData?.map((menuItem) => (
                   <div key={menuItem.id}>
                     <li  className={styles.menuItem}>
                       <Link href={`/${locale}/${menuItem.route}`} className="flex items-center justify-between"><span>{menuItem.menuTitle}</span>
@@ -219,7 +281,7 @@ const Navbar = () => {
                       </div>
                     )}
                   </div>
-                ))}
+                ))} */}
               </ul>
             </div>
 
@@ -280,9 +342,9 @@ const Navbar = () => {
           onAnimationEnd={sidebarAnimation}
         >
           <ul className="bg-primary2/25 ">
-            {menusDataEn.map((menu) => (
+            {/* {menusDataEn.map((menu) => (
               <NavbarItems key={menu.id} menuItem={menu} />
-            ))}
+            ))} */}
           </ul>
           <div>SignIn/SignUp</div>
         </aside>
