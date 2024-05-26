@@ -1,73 +1,84 @@
 {
   "navbar": {
-    "login": "ورود"
+    "login": "ورود",
+    "products": "محصولات",
+    "home": "صفحه اصلی",
+    "services": " خدمات  ",
+    "news": " اخبار ",
+    "contact": " تماس با ما ",
+    "about": " درباره ما "
   },
-    "description-Services": {
-      "title": "تحویل سریع و پشتیبانی جامع",
-      "description": "اکثر محصولات موجود هستند و آماده ارسال در همان روز هستند - برای شروع سفارش با ما تماس بگیرید"
-    },
+  "description-Services": {
+    "title": "تحویل سریع و پشتیبانی جامع",
+    "description": "اکثر محصولات موجود هستند و آماده ارسال در همان روز هستند - برای شروع سفارش با ما تماس بگیرید"
+  },
   "search": {
     "placeholder": " نام محصول مورد  نظر را وارد کنید... "
   },
-  "product-slider":{
-    "slider1":{
-      "name":"پروفایلومتر سه‌بعدی نوری",
-      "feature1":" اندازه‌گیری و نمایش پروفایل سه‌بعدی سطح",
-      "feature2":"دقت عمقی بهتر از ۵ نانومتر",
-      "feature3":"قابلیت اندازه‌گیری سطوح تخت و کروی، مایع و جامد",
-      "feature4":"غیر مخرب و بدون نیاز به آماده‌سازی نمونه"
+  "product-slider": {
+    "slider1": {
+      "name": "پروفایلومتر سه‌بعدی نوری",
+      "feature1": " اندازه‌گیری و نمایش پروفایل سه‌بعدی سطح",
+      "feature2": "دقت عمقی بهتر از ۵ نانومتر",
+      "feature3": "قابلیت اندازه‌گیری سطوح تخت و کروی، مایع و جامد",
+      "feature4": "غیر مخرب و بدون نیاز به آماده‌سازی نمونه"
     },
-    "slider2":{
-      "name":" انواع جابجاگر ",
-      "feature1":"  نانوجابجاگر دستی ",
-      "feature2":"نانو جابجاگر پیزوالکتریک ",
-      "feature3":" جابجاگر دستی ",
-      "feature4":" جابجاگر موتوری "
+    "slider2": {
+      "name": " انواع جابجاگر ",
+      "feature1": "  نانوجابجاگر دستی ",
+      "feature2": "نانو جابجاگر پیزوالکتریک ",
+      "feature3": " جابجاگر دستی ",
+      "feature4": " جابجاگر موتوری "
     },
-    "slider3":{
-      "name":" دوربین پایش کوره دمای بالا ",
-      "feature1":"قابلیت تغییر زاویه و میدان دید بر حسب سفارش ",
-      "feature2":"طراحی اپتیکی بر اساس مقاومت در دمای بالا",
-      "feature3":" سیستم خنک‌کاری فقط هواخنک (بدون نیاز به آب‌خنک)",
-      "feature4":"بدون نیاز به سیستم خود عقب‌کش ",
-      "feature5":"کنترل دوربین از طریق وایفای",
-      "feature6":"دارای شیشه محافظ قابل تعویض",
-      "feature7":"پنجره دوربین خود تمیز شونده"
+    "slider3": {
+      "name": " دوربین پایش کوره دمای بالا ",
+      "feature1": "قابلیت تغییر زاویه و میدان دید بر حسب سفارش ",
+      "feature2": "طراحی اپتیکی بر اساس مقاومت در دمای بالا",
+      "feature3": " سیستم خنک‌کاری فقط هواخنک (بدون نیاز به آب‌خنک)",
+      "feature4": "بدون نیاز به سیستم خود عقب‌کش ",
+      "feature5": "کنترل دوربین از طریق وایفای",
+      "feature6": "دارای شیشه محافظ قابل تعویض",
+      "feature7": "پنجره دوربین خود تمیز شونده"
     },
-    "slider4":{
-      "name":"انواع طیف‌سنج",
-      "feature1":"طیف‌سنج Vis-NIR",
-      "feature2":"طیف‌سنج نوری UV-Vis-NIR",
-      "feature3":"طیف‌سنج نوری Vis-NIR "
+    "slider4": {
+      "name": "انواع طیف‌سنج",
+      "feature1": "طیف‌سنج Vis-NIR",
+      "feature2": "طیف‌سنج نوری UV-Vis-NIR",
+      "feature3": "طیف‌سنج نوری Vis-NIR "
     }
   },
-  "signup":{
-    "titleHeader":"ساخت حساب کاربری",
-    "fullnamelabel":"نام و نام خانوادگی",
-    "fullnameInputPlaceholder":"نام و نام خانوادگی",
-    "emaillabel":"ایمیل",
-    "emailInputPlaceholder":"ایمیل",
-    "passwordlabel":"رمز عبور",
-    "passwordInputPlaceholder":"رمز عبور",
-    "button":"عضویت",
-    "isExistAccount":"آیا حساب کاربری دارید؟ ",
-    "linkIsExistAccount":"کلیک کنید"
+  "signup": {
+    "titleHeader": "ساخت حساب کاربری",
+    "fullnamelabel": "نام و نام خانوادگی",
+    "fullnameInputPlaceholder": "نام و نام خانوادگی",
+    "emaillabel": "ایمیل",
+    "emailInputPlaceholder": "ایمیل",
+    "passwordlabel": "رمز عبور",
+    "passwordInputPlaceholder": "رمز عبور",
+    "button": "عضویت",
+    "isExistAccount": "آیا حساب کاربری دارید؟ ",
+    "linkIsExistAccount": "کلیک کنید"
   },
-    
-  "signin":{
-    "titleHeader":"خوش آمدی",
-    "emaillabel":"ایمیل",
-    "emailInputPlaceholder":"ایمیل",
-    "passwordlabel":"پسوورد",
-    "passwordInputPlaceholder":"پسوورد",
-    "button":"ورود",
-    "isHaveAccount":"آیا حساب کاربری ندارید؟  ",
-    "linkIsHaveAccount":"کلیک کن"
 
+  "signin": {
+    "titleHeader": "خوش آمدی",
+    "emaillabel": "ایمیل",
+    "emailInputPlaceholder": "ایمیل",
+    "passwordlabel": "پسوورد",
+    "passwordInputPlaceholder": "پسوورد",
+    "button": "ورود",
+    "isHaveAccount": "آیا حساب کاربری ندارید؟  ",
+    "linkIsHaveAccount": "کلیک کن"
   },
-  "allProducts":{
-    "title":" تمام محصولات ",
-    "btn":" مشاهده محصولات "
+  "allProducts": {
+    "title": " تمام محصولات ",
+    "btn": " مشاهده محصولات "
+  },
+  "allNews": {
+    "title": " اخبار و رویدادها",
+    "btn": " مشاهده تمام رویدادها  "
+  },
+  "compant-clients": {
+    "title": "  مشتریان ما "
   }
-
 }

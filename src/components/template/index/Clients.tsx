@@ -6,8 +6,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const Cients = () => {
+  const t = useTranslations('compant-clients')
   const slider_clientsdata = [
     {
       id: "1",
@@ -93,7 +95,7 @@ const Cients = () => {
 
   return (
     <div className="bg-primary2 py-4 my-5">
-    <p className="text-center text-3xl font-medium mt-10 "> Company Clients </p>
+    <p className="text-center text-3xl font-medium mt-10 ">{t('title')}</p>
     <div className="flex  items-center justify-center  py-10  ">
       <Swiper
         loop={true}

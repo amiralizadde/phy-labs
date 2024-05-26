@@ -5,16 +5,18 @@ import styles from '../../../styles/index/index.module.css'
 import { FaArrowRightLong } from "react-icons/fa6";
 import connectToDB from "@/configs/db";
 import NewsModel from "../../../../models/News";
+import { useTranslations } from "next-intl";
 
 const News = async() => {
+   const t = useTranslations('allNews')
   connectToDB()
   const allNews = await NewsModel.find({})
   return (
     <div className="px-10 my-10">
       <div className="flex items-center justify-between">
-      <TitleBox title="News And Events" />
+      <TitleBox title={t('title')} />
       <button className=" font-medium bg-primary text-white py-2 px-10 hover:scale-105 transition-all duration-200 cursor-pointer"> 
-      <span>View all News</span>
+      <span>{t('btn')}</span>
        </button>
       </div>
       <div className="my-10">

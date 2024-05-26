@@ -227,40 +227,40 @@ const Navbar = () => {
 
                   <li className={styles.menuItem}>
                     <Link href={`/${locale}/`}>
-                      <span>Home</span>
+                      <span>{t('home')}</span>
                     </Link>
                   </li>
                   <li className={styles.menuItem}>
                      <Link href={`/${locale}/products`} className="flex items-center justify-between">
-                       <span>Products</span>
+                       <span>{t('products')}</span>
                        <MdArrowForwardIos className={styles.arrowSubroutes} />
                      </Link>
-                     {allCategory?.length && (
+                     {allCategory?.length ? (
                       <div className={styles.submenu}>
                         {allCategory?.map((categoryItem) => (
                           <Menu key={categoryItem._id} menu={categoryItem} />
                         ))}
                       </div>
-                    )}
+                    ):''}
                   </li>
                   <li className={styles.menuItem}>
                     <Link href={`/${locale}/services`}>
-                      <span>Services</span>
+                      <span>{t('services')}</span>
                     </Link>
                   </li>
                   <li className={styles.menuItem}>
                     <Link href={`/${locale}/news`}>
-                      <span>News</span>
+                      <span>{t('news')}</span>
                     </Link>
                   </li>
                   <li className={styles.menuItem}>
                     <Link href={`/${locale}/about/companyMembers`}>
-                      <span>About</span>
+                      <span>{t('about')}</span>
                     </Link>
                   </li>
                   <li className={styles.menuItem}>
                     <Link href={`/${locale}/contact`}>
-                      <span>Contact</span>
+                      <span>{t('contact')}</span>
                     </Link>
                   </li>
 

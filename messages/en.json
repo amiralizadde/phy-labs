@@ -1,76 +1,83 @@
 {
-    "navbar": {
-      "login": "login"
+  "navbar": {
+    "login": "login",
+    "products": "محصولات",
+    "home": " Home ",
+    "services": " Services  ",
+    "news": "News  ",
+    "contact": "  Contact  ",
+    "about": " About  "
+  },
+  "description-Services": {
+    "title": "Quick Delivery and Comprehensive Support",
+    "description": "Most products are in stock and ready for same-day shipping - contact us to get your order started"
+  },
+  "search": {
+    "placeholder": " Enter your product name ... "
+  },
+  "product-slider": {
+    "slider1": {
+      "name": "Optical 3D Profilometer",
+      "feature1": " Measuring and displaying the three-dimensional profile of the surface ",
+      "feature2": "Depth accuracy better than 5 nm",
+      "feature3": "Ability to measure flat and spherical, liquid and solid surfaces.",
+      "feature4": "Non-destructive and no need for sample preparation"
     },
-    "description-Services": {
-      "title": "Quick Delivery and Comprehensive Support",
-      "description": "Most products are in stock and ready for same-day shipping - contact us to get your order started"
+    "slider2": {
+      "name": "Types of Positioners",
+      "feature1": "Manual Linear Translation Stages",
+      "feature2": "Manual Linear Nano-Positioner",
+      "feature3": "Piezo Nano positioner",
+      "feature4": "Miniature Linear Translation Stages"
     },
-    "search": {
-      "placeholder": " Enter your product name ... "
+    "slider3": {
+      "name": "Furnace monitoring camera",
+      "feature1": "The ability to change the angle and field of view according to the order ",
+      "feature2": "Optical design based on high temperature resistancer",
+      "feature3": "  Air-cooled cooling system only (no need for cooling water)",
+      "feature4": "No need for a self-retracting system ",
+      "feature5": " Camera control via Wi-Fi",
+      "feature6": "With replaceable protective glass",
+      "feature7": "Self-cleaning camera window"
     },
-    "product-slider":{
-      "slider1":{
-        "name":"Optical 3D Profilometer",
-        "feature1":" Measuring and displaying the three-dimensional profile of the surface " ,
-        "feature2":"Depth accuracy better than 5 nm",
-        "feature3":"Ability to measure flat and spherical, liquid and solid surfaces.",
-        "feature4":"Non-destructive and no need for sample preparation"
-      },
-      "slider2":{
-        "name":"Types of Positioners",
-        "feature1":"Manual Linear Translation Stages",
-        "feature2":"Manual Linear Nano-Positioner",
-        "feature3":"Piezo Nano positioner",
-        "feature4":"Miniature Linear Translation Stages"
-      },
-      "slider3":{
-        "name":"Furnace monitoring camera",
-        "feature1":"The ability to change the angle and field of view according to the order ",
-        "feature2":"Optical design based on high temperature resistancer",
-        "feature3":"  Air-cooled cooling system only (no need for cooling water)",
-        "feature4":"No need for a self-retracting system ",
-        "feature5":" Camera control via Wi-Fi",
-        "feature6":"With replaceable protective glass",
-        "feature7":"Self-cleaning camera window"
-      },
-      "slider4":{
-        "name":"Types of spectrometers",
-        "feature1":"spectrometer Vis-NIR",
-        "feature2":"Optical spectrometer  UV-Vis-NIR",
-        "feature3":"Optical spectrometer Vis-NIR "
-      }
-    },
-    "signup":{
-      "titleHeader":"Create your account",
-      "fullnamelabel":"fullname",
-      "fullnameInputPlaceholder":"fullname",
-      "emaillabel":"Email",
-      "emailInputPlaceholder":"email",
-      "passwordlabel":"password",
-      "passwordInputPlaceholder":"password",
-      "button":"Sign up",
-      "isExistAccount":"Have you already account?",
-      "linkIsExistAccount":"Click here"
-
-    },
-    "signin":{
-      "titleHeader":"Welcome",
-      "emaillabel":"Email",
-      "emailInputPlaceholder":"email",
-      "passwordlabel":"password",
-      "passwordInputPlaceholder":"password",
-      "button":"Sign in",
-      "isHaveAccount":"don't have account?",
-      "linkIsHaveAccount":"Click here"
-
-    },
-    "allProducts":{
-      "title":"all products",
-      "btn":" View All Products"
+    "slider4": {
+      "name": "Types of spectrometers",
+      "feature1": "spectrometer Vis-NIR",
+      "feature2": "Optical spectrometer  UV-Vis-NIR",
+      "feature3": "Optical spectrometer Vis-NIR "
     }
-
-
-
-  
+  },
+  "signup": {
+    "titleHeader": "Create your account",
+    "fullnamelabel": "fullname",
+    "fullnameInputPlaceholder": "fullname",
+    "emaillabel": "Email",
+    "emailInputPlaceholder": "email",
+    "passwordlabel": "password",
+    "passwordInputPlaceholder": "password",
+    "button": "Sign up",
+    "isExistAccount": "Have you already account?",
+    "linkIsExistAccount": "Click here"
+  },
+  "signin": {
+    "titleHeader": "Welcome",
+    "emaillabel": "Email",
+    "emailInputPlaceholder": "email",
+    "passwordlabel": "password",
+    "passwordInputPlaceholder": "password",
+    "button": "Sign in",
+    "isHaveAccount": "don't have account?",
+    "linkIsHaveAccount": "Click here"
+  },
+  "allProducts": {
+    "title": "all products",
+    "btn": " View All Products"
+  },
+  "allNews": {
+    "title": "News and Events",
+    "btn": " View All News"
+  },
+  "compant-clients": {
+    "title": "Company Clients"
+  }
 }
