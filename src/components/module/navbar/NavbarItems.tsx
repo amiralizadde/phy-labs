@@ -21,7 +21,7 @@ const NavbarItems = ({menuItem}:NavbarItemsProps) => {
         {isShowSubroutes && menuItem.category && (
         <ul className='bg-gray-300/50 py-2 my-2 me-5 rounded-md child:py-1'>
             {menuItem.category?.map(categoryItem=>(
-                <NavbarSubroutes key={categoryItem.id} productsItem={categoryItem} />
+                <NavbarSubroutes key={categoryItem._id} productsItem={categoryItem} />
             ))}
         </ul>
         )}
