@@ -2,10 +2,12 @@
 import connectToDB from "@/configs/db";
 import NewsModel from "../../../../models/News";
 import NewsBox from "@/components/module/newBox/NewsBox";
+import { useLocale } from "next-intl";
 
 const News = async () => {
+  const locale = useLocale()
   connectToDB();
-  const allNews = await NewsModel.find({});
+  const allNews = await NewsModel.find({locale});
 
   return (
     <div className="mt-32  ">

@@ -1,8 +1,8 @@
 {
   "navbar": {
     "login": "login",
-    "products": "Products",
     "home": " Home ",
+    "products": "Products",
     "services": " Services  ",
     "news": "News  ",
     "contact": "  Contact  ",
@@ -71,13 +71,28 @@
   },
   "allProducts": {
     "title": "all products",
-    "btn": " View All Products"
+    "btn": " View All Products",
+    "emptyTitle":" Your product basket is empty "
   },
   "allNews": {
     "title": "News and Events",
-    "btn": " View All News"
+    "btn": " View All News",
+    "emptyTitle":" Your Events  is empty "
   },
   "compant-clients": {
     "title": "Company Clients"
+  },
+  "footer":{
+    "title1":"Quick Delivery and Comprehensive Support",
+    "title2":"KEYENCE supports customers from the selection process to line operations with on-site operating instructions and after-sales support.",
+    "btn1-title":"Contact Us",
+    "btn1-text":"Contact Us",
+    "btn2-title":"For Your Support",
+    "btn2-text":"more about",
+    "address":"Science and Technology Park, Institute for Advanced Studies in Basic Sciences, Prof. Sobouti Blvd. Zanjan, Iran",
+    "rule1":"Privacy",
+    "rule2":"Terms of Use",
+    "copy-right":"Copyright (C) 2024 phy-labs CORPORATION. All Rights Reserved"
   }
+  
 }

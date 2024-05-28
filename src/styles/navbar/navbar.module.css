@@ -20,7 +20,7 @@
   @apply  font-medium xl:text-lg p-2 cursor-pointer  hover:after:right-0 mx-2 xl:mx-5 hover:text-primary;
 }
 .submenu {
-  @apply hidden  -translate-y-1 z-50  py-5 absolute top-[93%] left-0 right-0 bg-primary2;
+  @apply hidden  -translate-y-1  z-50  py-5 absolute top-[93%] left-10 right-10 bg-primary2;
 }
 
 
@@ -47,7 +47,7 @@
 /* collaps menu */
 
 .collapsMenu__content {
-  @apply lg:hidden absolute top-full  bottom-0 h-[100vh] z-50 transition-all duration-500   overflow-y-auto    sm:w-1/2  min-w-80 child:py-5;
+  @apply lg:hidden absolute top-full  bottom-0 h-[100vh] bg-primary2 z-50 transition-all duration-500   overflow-y-auto    sm:w-1/2  min-w-80 child:py-5;
 }
 .collapsMenu__content ul {
   @apply child:ps-3;

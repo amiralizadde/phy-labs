@@ -76,6 +76,18 @@ const ProductSlider = () => {
           pagination={{
             clickable: true,
           }}
+          breakpoints={{
+            0: { // برای سایزهای کوچکتر از 991px
+              navigation: {
+                enabled:false
+              },
+            },
+            991: { // برای سایزهای بزرگتر از 991px
+              navigation: {
+                enabled:true
+              },
+            },
+          }}
         className="mySwiper h-auto md:h-[50vw] xl:h-[30vw] md:bg-gray-100 flex items-center justify-center "
       >
          <SwiperSlide className="">

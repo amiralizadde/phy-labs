@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
 
 const schema = new mongoose.Schema({
-
+    locale:{
+        type:String,
+        required:true
+    },
     shortTitle:{
         type:String,
         required:true

@@ -8,7 +8,7 @@ import ProductBox from '@/components/module/productBox/ProductBox';
 
 const AllProducts = async() => {
   connectToDB()
-  const allProduct = await Productmodel.find({})
+  const allProduct = await Productmodel.find({locale:"en"})
   return (
 
     <div>
