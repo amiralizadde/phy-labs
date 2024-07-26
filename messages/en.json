@@ -1,19 +1,26 @@
 {
   "navbar": {
-    "login": "login",
+    "Signin": "Signin",
+    "Register": "Register",
+    "Persian": "Persian",
     "home": " Home ",
     "products": "Products",
+    "downloads":"Downloads",
     "services": " Services  ",
     "news": "News  ",
     "contact": "  Contact  ",
-    "about": " About  "
+    "about": " About  ",
+    "sustainability":"Sustainability",
+    "company-members": " company-members  ",
+    "company-history": " company-history  ",
+    "phone": "024-33415472"
   },
   "description-Services": {
     "title": "Quick Delivery and Comprehensive Support",
     "description": "Most products are in stock and ready for same-day shipping - contact us to get your order started"
   },
   "search": {
-    "placeholder": " Enter your product name ... "
+    "placeholder": " What are you looking for ... "
   },
   "product-slider": {
     "slider1": {
@@ -83,7 +90,8 @@
     "title": "Company Clients"
   },
   "footer":{
-    "title1":"Quick Delivery and Comprehensive Support",
+    "products":"Products",
+    "title1":"Phylabs Corporation",
     "title2":"KEYENCE supports customers from the selection process to line operations with on-site operating instructions and after-sales support.",
     "btn1-title":"Contact Us",
     "btn1-text":"Contact Us",
@@ -92,7 +100,13 @@
     "address":"Science and Technology Park, Institute for Advanced Studies in Basic Sciences, Prof. Sobouti Blvd. Zanjan, Iran",
     "rule1":"Privacy",
     "rule2":"Terms of Use",
-    "copy-right":"Copyright (C) 2024 phy-labs CORPORATION. All Rights Reserved"
+    "copy-right":"Copyright (C) 2024 phy-labs CORPORATION. All Rights Reserved",
+    "company":"Company",
+    "support":"Support",
+    "contact":"Contact",
+    "terms-of-Use":"Terms of Use",
+    "privacy-Policy":"Privacy Policy",
+    "cookie-Policy":"Cookie Policy"
   }
   
 }

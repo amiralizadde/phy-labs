@@ -15,6 +15,9 @@ module.exports = {
         primary2:"#eeeded",
       },
       fontFamily: {
+        inter:"inter",
+        shabnam: ['Shabnam','sans-serif'],
+        'shabnam-bold': ['Shabnam-Bold', 'sans-serif'],
       },
       screens: {
         '2xs':"350px",

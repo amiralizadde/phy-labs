@@ -1,0 +1,4 @@
+.product_img{
+    box-shadow: 0px 80px 40px -40px #a4a4a4;
+    @apply w-full h-full object-cover -translate-y-10 
+}

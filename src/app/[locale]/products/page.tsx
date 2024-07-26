@@ -5,10 +5,12 @@ import styles from '../../../styles/allproducts/allproducts.module.css'
 import connectToDB from '@/configs/db';
 import Productmodel from '../../../../models/Product';
 import ProductBox from '@/components/module/productBox/ProductBox';
+import { useLocale } from 'next-intl';
 
 const AllProducts = async() => {
+  const locale = useLocale()
   connectToDB()
-  const allProduct = await Productmodel.find({locale:"en"})
+  const allProduct = await Productmodel.find({locale})
   return (
 
     <div>

@@ -13,7 +13,6 @@ import Menu from "./Menu";
 import Link from "next/link";
 
 import { useTranslations } from "next-intl";
-import ChangeLanguage from "../changeLang/ChangeLanguage";
 import Image from "next/image";
 import { product } from "@/types/productTypes";
 
@@ -169,9 +168,9 @@ const Navbar = () => {
             </div>
 
             <div className="flex items-center justify-end">
-              <ChangeLanguage />
+              
               <span className="mx-3 ">
-                <Link href={`/${locale}/signup`}>
+                <Link href={`/${locale}/signin`}>
                   <FaUser className="cursor-pointer" />
                 </Link>
               </span>

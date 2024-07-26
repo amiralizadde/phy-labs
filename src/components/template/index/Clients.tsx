@@ -13,83 +13,83 @@ const Cients = () => {
   const slider_clientsdata = [
     {
       id: "1",
-      imageName: " (1).jpg",
+      imageName: "1.png",
     },
     {
       id: "2",
-      imageName: " (2).png",
+      imageName: "2.png",
     },
     {
       id: "3",
-      imageName: " (3).png",
+      imageName: "3.png",
     },
     {
       id: "4",
-      imageName: " (4).png",
+      imageName: "4.png",
     },
     {
       id: "5",
-      imageName: " (5).png",
+      imageName: "5.png",
     },
     {
       id: "6",
-      imageName: " (6).png",
+      imageName: "6.png",
     },
     {
       id: "7",
-      imageName: " (7).png",
+      imageName: "7.png",
     },
     {
       id: "8",
-      imageName: " (8).png",
+      imageName: "8.png",
     },
     {
       id: "9",
-      imageName: " (9).png",
+      imageName: "9.png",
     },
     {
       id: "10",
-      imageName: " (10).png",
+      imageName: "10.png",
     },
     {
       id: "11",
-      imageName: " (11).png",
+      imageName: "11.png",
     },
     {
       id: "12",
-      imageName: " (12).png",
+      imageName: "12.png",
     },
     {
       id: "13",
-      imageName: " (13).png",
+      imageName: "13.png",
     },
     {
       id: "14",
-      imageName: " (14).png",
+      imageName: "14.png",
     },
     {
       id: "15",
-      imageName: " (15).png",
+      imageName: "15.png",
     },
     {
       id: "16",
-      imageName: " (16).png",
+      imageName: "16.png",
     },
     {
       id: "17",
-      imageName: " (17).png",
+      imageName: "17.png",
     },
     {
       id: "18",
-      imageName: " (18).png",
+      imageName: "18.png",
     },
     {
       id: "19",
-      imageName: " (19).png",
+      imageName: "19.png",
     },
     {
       id: "20",
-      imageName: " (1).png",
+      imageName: "20.png",
     },
   ];
 

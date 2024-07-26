@@ -9,11 +9,11 @@ import {useTranslations} from 'next-intl';
 export default function Home() {
   const t = useTranslations('navbar');
   return (
-    <div className='mt-32'>
+    <div className=''>
       <DescribServices />
       <ProductSlider />
       <AllProducts />
-      <News />
+      <News /> 
       <Clients />
     </div>
   )

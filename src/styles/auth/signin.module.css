@@ -1,0 +1,15 @@
+.textOr{
+    @apply  relative flex items-center text-center   my-10
+
+}
+.textOr span{
+    @apply font-light  z-20  ms-6 text-sm
+}
+.textOr span::after{
+    content: "";
+    @apply h-[0.5px] bg-black absolute end-0 start-12 top-1/2 z-10 block
+}
+.textOr span::before{
+    content: "";
+    @apply h-[0.5px] w-5  bg-black absolute start-0  top-1/2 z-10 
+}

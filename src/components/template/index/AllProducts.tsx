@@ -30,7 +30,7 @@ const AllProducts = async () => {
       <div className="my-10">
         {sortProducts.length > 0 ? (
           <div className="px-5 lg:px-20 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
-            {sortProducts.map((product) => (
+            {sortProducts.slice(0,8).map((product) => (
               <div className="border h-80 flex flex-col items-center justify-between shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer py-4">
                 <div className="flex items-center justify-center">
                   <Image

@@ -13,8 +13,6 @@ const News = async () => {
   const t = useTranslations("allNews");
   connectToDB();
   const allNews = await NewsModel.find({ locale });
-
-  console.log('allNews ->' ,allNews);
   
 
   return (
@@ -28,7 +26,7 @@ const News = async () => {
       <div className="my-10">
         {allNews.length > 0 ? (
           <div className="px-5 lg:px-20 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-            {allNews.map((news) => (
+            {allNews.slice(0,4).map((news) => (
               <div className={styles.newsbox}>
                 <p className="text-sm"> May 18, 2024 </p>
                 <p className="text-sm font-bold mt-2">{news.shortTitle}</p>
