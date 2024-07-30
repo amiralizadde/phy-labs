@@ -341,7 +341,7 @@ const ProductDetails = () => {
                             />
                         </SwiperSlide>
                     </Swiper>
-                    <Swiper
+                     <Swiper
                         onSwiper={setThumbsSwiper}
                         loop={true}
                         spaceBetween={10}
@@ -349,8 +349,8 @@ const ProductDetails = () => {
                         freeMode={true}
                         watchSlidesProgress={true}
                         modules={[FreeMode, Navigation, Thumbs]}
-                        className=" w-4/5 border h-[100px]  child:p-2 rtl mt-3"
-                    >
+                        className="w-4/5 border h-[100px]  child:p-2 rtl mt-3 "
+                     >
                         <SwiperSlide className="w-full h-full bg-primary2  rounded p-2 ">
                             <Image
                                 src="/assets/pics_products/p_6.png"
