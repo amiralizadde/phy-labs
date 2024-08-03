@@ -26,7 +26,9 @@ const ProductDetails = () => {
   const [tabInfo, setTabInfo] = useState<string>("Description");
   const [isShowGallery , setIsShowGallery] = useState<boolean>(false)
 
- 
+  const handleSwiper = (swiper:any) => {
+    setThumbsSwiper(swiper);
+  };
 
   return (
     <div className="relative">
@@ -78,7 +80,7 @@ const ProductDetails = () => {
                 </SwiperSlide>
               </Swiper>
               <Swiper
-                    onSwiper={setThumbsSwiper}
+                    // onSwiper={setThumbsSwiper}
                     loop={true}
                     spaceBetween={10}
                     slidesPerView={4}
@@ -342,7 +344,7 @@ const ProductDetails = () => {
                         </SwiperSlide>
                     </Swiper>
                      <Swiper
-                        onSwiper={setThumbsSwiper}
+                        onSwiper={handleSwiper}
                         loop={true}
                         spaceBetween={10}
                         slidesPerView={10}
