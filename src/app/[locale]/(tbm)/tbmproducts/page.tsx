@@ -13,7 +13,7 @@ const TbmProducts = () => {
       <div className="grid grid-cols-5 child:py-5 child:px-3">
         <div className="col-span-5 md:col-span-3  ">
           <p className="text-xl font-bold">Laser Guide of TBM</p>
-          <p className="py-3 text-sm font-medium md:w-4/5">
+          <p className="py-3 text-sm font-medium md:w-4/5 leading-7">
             The PHYLABS tunneling laser represents an advanced evolution of our
             proven PHYLABS tunneling laser technology. Specially designed for
             Tunnel Boring Machine (TBM) operations, it is also versatile enough
@@ -25,7 +25,7 @@ const TbmProducts = () => {
         </div>
         <div className="col-span-5 md:col-span-2  ">
           <p className="text-base font-bold">Laser Guide of TBM</p>
-          <p className="py-3 text-sm font-medium mf:w-4/5">
+          <p className="py-3 text-sm font-medium mf:w-4/5 leading-7">
             Our lasers benefit from decades of research, development, and
             production expertise in construction lasers. Their design,
             high-quality materials, and strict quality assurance processes
@@ -42,11 +42,11 @@ const TbmProducts = () => {
       </div>
 
       {/* Information Tbm */}
-      <div className="grid grid-cols-5   p-2  -translate-y-10">
-        <div className="col-span-3 border-t-2 border-t-black border-e-2 border-e-black">
+      <div className="grid grid-cols-5   p-2  lg:-translate-y-10">
+        <div className="col-span-5 lg:col-span-3 border-t-2 border-t-black lg:border-e-2 border-e-black">
           {/* headers tabs */}
-          {/* <div className="px-3 my-3">
-            <ul className="flex items-center justify-between child:font-medium child:hover:cursor-pointer child:border-b child:shadow  child:w-full child:text-center child:ms-2 child:py-2 child:rounded">
+          <div className="px-3 my-3">
+            <ul className="flex flex-col lg:flex-row items-center justify-between child:text-sm child:font-medium child:hover:cursor-pointer child:border-b child:shadow  child:w-full child:text-center child:ms-2 child:py-2 child:rounded">
               <li
                 className={`${
                   tabTBM === "Intro" ? "bg-primary text-white" : ""
@@ -88,17 +88,17 @@ const TbmProducts = () => {
                 Guarantee
               </li>
             </ul>
-          </div> */}
+          </div>
         </div>
-        <div className="col-span-2 border-b-2 border-b-black">
+        <div className="col-span-2 lg:border-b-2 border-b-black">
           {/* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia tempora nobis quas corrupti doloremque saepe? */}
         </div>
-
+        </div>
         {/* Dynamic information */}
-        {/* <div className="col-span-3 ">
+        <div className="grid grid-cols-5 ">
           {tabTBM === "Intro" && (
             <>
-              <div className="p-10 font-medium leading-7">
+              <div className="col-span-5 lg:col-span-3  text-xs xs:text-sm p-3 lg:p-10 font-medium leading-7 xs:leading-8">
                 The PHYLABS tunneling laser represents an advanced evolution of
                 our proven PHYLABS tunneling laser technology. Specially
                 designed for Tunnel Boring Machine (TBM) operations, it is also
@@ -108,12 +108,12 @@ const TbmProducts = () => {
                 Additionally, it is suitable for sewer pipe laying and numerous
                 other applications
               </div>
-              <div>video</div>
+              <div className="col-span-3">video</div>
             </>
           )}
           {tabTBM === "Sender" && (
-            <div>
-              <div className="p-5 font-medium  leading-7">
+            <div className="col-span-5 lg:col-span-3  text-xs xs:text-sm leading-7 xs:leading-8 p-3 lg:p-10 font-medium ">
+              <div className="p-5 font-medium text-xs xs:text-sm leading-7 xs:leading-8">
                 The PHYLABS tunneling laser, designed specifically for Tunnel
                 Boring Machine (TBM) operations, is adaptable to various TBM
                 models. It is also highly versatile, making it suitable for a
@@ -154,65 +154,65 @@ const TbmProducts = () => {
                 </li>
               </ul>
 
-              <table className="col-span-3   w-full p-5 mt-5">
-                <tbody className="odd:child:bg-primary2 child:text-sm ">
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
-                    <td>Laser classes</td>
+              <table className="   w-full sm:p-5 mt-5">
+                <tbody className="xs:odd:child:bg-primary2 child:text-sm child:py-2">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b flex flex-col xs:flex-row justify-between">
+                    <td >Laser classes :</td>
                     <td> Class 3R, 5 mW</td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-600  child:rounded child:text-sm border-b flex flex-col xs:flex-row justify-between">
                     <td>Laser </td>
                     <td>rot 658 nm</td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-600  child:rounded child:text-sm border-b flex flex-col xs:flex-row justify-between">
                     <td>Range</td>
                     <td>up to 500 m </td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-600  child:rounded child:text-sm border-b flex flex-col xs:flex-row justify-between">
                     <td>Beam diameter on the laser</td>
                     <td>13 mm, + ca. 5,5 mm pro 100 m </td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-600  child:rounded child:text-sm border-b flex flex-col xs:flex-row justify-between">
                     <td>Tilt range</td>
                     <td>- 10% to + 40% </td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-600  child:rounded child:text-sm border-b flex flex-col xs:flex-row justify-between">
                     <td>Reading accuracy</td>
                     <td>0,001 %</td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-600  child:rounded child:text-sm border-b flex flex-col xs:flex-row justify-between">
                     <td> permissible deviation</td>
                     <td>± 0,005 % </td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-600  child:rounded child:text-sm border-b flex flex-col xs:flex-row justify-between">
                     <td>Direction setting</td>
                     <td>5% (10 m per 100 m)</td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-600  child:rounded child:text-sm border-b flex flex-col xs:flex-row justify-between">
                     <td>External power supply</td>
                     <td>from 10 to 13.8 Volt DC/ 0.4 A</td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-600  child:rounded child:text-sm border-b flex flex-col xs:flex-row justify-between">
                     <td>Undervoltage shutdown</td>
                     <td>Yes</td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-600  child:rounded child:text-sm border-b flex flex-col xs:flex-row justify-between">
                     <td>Waterproof </td>
                     <td>up to 3.5 m</td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-600  child:rounded child:text-sm border-b flex flex-col xs:flex-row justify-between">
                     <td>Temperature range</td>
                     <td>- 20° C bus + 50° C</td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-600  child:rounded child:text-sm border-b flex flex-col xs:flex-row justify-between">
                     <td>Weight</td>
                     <td>VL-70 3,1 kg + PH-80 2,2 kg = 5,3 kg</td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-600  child:rounded child:text-sm border-b flex flex-col xs:flex-row justify-between">
                     <td>Guarantee</td>
                     <td>24 Fun</td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-600  child:rounded child:text-sm border-b flex flex-col xs:flex-row justify-between">
                     <td>adjustment</td>
                     <td>possible in the field without opening the device.</td>
                   </tr>
@@ -221,7 +221,7 @@ const TbmProducts = () => {
             </div>
           )}
           {tabTBM === "Receiver" && (
-            <div>
+            <div className="col-span-5 lg:col-span-3  text-xs xs:text-sm leading-7 xs:leading-8 p-3 lg:p-10 font-medium ">
               <div className="p-5 font-medium  leading-7">
                 Accurate monitoring of a TBM's position and orientation in
                 three-dimensional space is crucial to ensure it follows the
@@ -272,70 +272,68 @@ const TbmProducts = () => {
               </ul>
 
               <table className="col-span-3   w-full p-5 mt-5">
-                <tbody className="odd:child:bg-primary2 child:text-sm ">
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                <tbody className="xs:odd:child:bg-primary2 child:text-sm  child:py-2 ">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td>Accuracy in Y ,X </td>
                     <td>0.3 degree </td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td>Accuracy in Yaw</td>
                     <td> ±5Cm </td>
                   </tr>
-
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td>Reception area</td>
                     <td>85m </td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td>Reception angle</td>
                     <td> 100° </td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td> Laser beam diameter </td>
                     <td> homogenous, 0 7 - 20 mm </td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td>Wave length </td>
                     <td>610 - 900 nm</td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td> Housing </td>
                     <td>watertight </td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td>Power supply </td>
                     <td>from 10 to 13.8 Volt DC/ 0.4 A </td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td>Current consumption</td>
                     <td>approx. 45mA </td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td>Waterproof </td>
                     <td>up to 3.5 m</td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td>Operation time </td>
                     <td> to 50 hours </td>
                   </tr>
-
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td>Dimensions</td>
                     <td> 140 x 67 x 32 mm </td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td>Weight </td>
                     <td> 5,3 kg </td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td>Certified </td>
                     <td> IP67</td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td>Guarantee </td>
                     <td> 24 Fun </td>
                   </tr>
-                  <tr className=" child:py-1 child:px-4 child:font-medium child:rounded">
+                  <tr className=" child:py-1 child:px-4 odd:child:font-bold even:child:text-gray-500  child:rounded child:text-sm border-b xs:border-b-0 flex flex-col xs:flex-row justify-between">
                     <td>adjustment </td>
                     <td>possible in the field without opening the device. </td>
                   </tr>
@@ -344,7 +342,7 @@ const TbmProducts = () => {
             </div>
           )}
           {tabTBM === "Accessories" && (
-            <div className="child:mt-16 ps-16">
+            <div className="child:mb-16 ps-16 col-span-5 lg:col-span-3  text-xs xs:text-sm leading-7 xs:leading-8 p-3 lg:p-10 font-medium ">
               <ul>
                 <li className="list-disc">
                   <p className="font-bold">Positioning device </p>
@@ -377,8 +375,8 @@ const TbmProducts = () => {
             </div>
           )}
           {tabTBM === "Guarantee" && "Guarantee"}
-        </div> */}
-      </div>
+        </div>
+     
     </div>
   );
 };
