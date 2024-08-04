@@ -138,7 +138,7 @@ const Navbar = () => {
                                 }
                             </li>
                             <li className="font-bold">{t('downloads')}</li>
-                            <li className="font-bold">{t('services')}</li>
+                            <Link href={`/${locale}/services`}><li className="font-bold">{t('services')}</li></Link>
                             <li className={styles.menuItem}>
                                 <span className="font-bold">{t('about')}</span>
                                 <MdOutlineKeyboardArrowDown className="w-7 h-5 text-primary"/>
