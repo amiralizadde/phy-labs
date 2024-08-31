@@ -12,8 +12,8 @@ export default function Home() {
     <div className=''>
       <DescribServices />
       <ProductSlider />
-      <AllProducts />
-      <News /> 
+      {/* <AllProducts /> */}
+      {/* <News />  */}
       <Clients />
     </div>
   )

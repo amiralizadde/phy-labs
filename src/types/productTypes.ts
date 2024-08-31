@@ -13,6 +13,7 @@ export type featureType={
 export type productType={
     _id:string
     name:string
+    URL:string
     description:string
     image:string
     features:featureType[]

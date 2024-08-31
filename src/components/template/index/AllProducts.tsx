@@ -14,13 +14,14 @@ const AllProducts = async () => {
   connectToDB();
   const allProductsCategores = await Productmodel.find({ locale });
   allProductsCategores.map((category) => {
-    category.products.slice(0, 2).map((product: productType) => {
+    
+    category.category.slice(0, 2).map((product: productType) => {
       sortProducts.push(product);
     });
   });
 
   return (
-    <div className=" my-10">
+    <div className=" my-20">
       <div className="flex items-center justify-between mx-5 sm:mx-10">
         <TitleBox title={t("title")} />
         <button className="font-medium bg-primary text-white py-1 px-5 xs:py-2 xs:px-10 text-sm hover:scale-105 transition-all duration-200 cursor-pointer">

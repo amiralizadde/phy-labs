@@ -35,7 +35,7 @@ const ProductDetails = () => {
       {/* container */}
       <div className="ps-3 xs:px-10">
         {/* Breadcrumb */}
-        <div className="my-5 xs:mt-10 xs:mb-16">
+        {/* <div className="my-5 xs:mt-10 xs:mb-16"> */}
           <Breadcrumb
             homeElement={locale === "en" ? "Home" : "خانه"}
             separator="/"
@@ -44,14 +44,14 @@ const ProductDetails = () => {
             activeClasses="active"
             capitalizeLinks={true}
           />
-        </div>
+        {/* </div> */}
 
 
         {/* top content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 child:me-auto sm:child:ms-auto child:mb-auto sm:child:me-0 gap-y-5 lg:child:mx-auto ">
           {/* img */}
           <div className="flex flex-col items-center justify-center w-full ">
-            <Swiper
+              <Swiper
                 navigation={false}
                 loop={true}
                 // thumbs={{ swiper: thumbsSwiper }}
@@ -79,7 +79,7 @@ const ProductDetails = () => {
                     />
                 </SwiperSlide>
               </Swiper>
-              <Swiper
+             <Swiper
                     // onSwiper={setThumbsSwiper}
                     loop={true}
                     spaceBetween={10}
@@ -110,8 +110,8 @@ const ProductDetails = () => {
                         />
                     
                     </SwiperSlide>
-                </Swiper>
-          </div>
+              </Swiper>
+          </div> 
            
 
           {/* description */}

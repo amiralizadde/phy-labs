@@ -1,15 +1,19 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import 'swiper/css/pagination';
-import { Navigation , Autoplay ,Pagination} from "swiper/modules";
+import "swiper/css/free-mode";
+import "swiper/css/thumbs";
+import {Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
+
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import styles from "@/styles/index/index.module.css";
 
 const ProductSlider = () => {
   const t = useTranslations("product-slider");
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 
   const slider_productsdata = [
     {
@@ -60,134 +64,178 @@ const ProductSlider = () => {
     },
   ];
 
-
-
-
   return (
-    <div className="flex items-center justify-center  ">
+    <div className="flex flex-col items-end justify-center w-full ">
       <Swiper
+        thumbs={{ swiper: thumbsSwiper }}
         navigation={true}
+        modules={[Autoplay,FreeMode, Navigation, Thumbs]}
         loop={true}
-        modules={[Autoplay, Pagination, Navigation]}
+        speed={2000}
         autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          breakpoints={{
-            0: { // برای سایزهای کوچکتر از 991px
-              navigation: {
-                enabled:false
-              },
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        breakpoints={{
+          0: {
+            // برای سایزهای کوچکتر از 991px
+            navigation: {
+              enabled: false,
             },
-            991: { // برای سایزهای بزرگتر از 991px
-              navigation: {
-                enabled:true
-              },
+          },
+          991: {
+            // برای سایزهای بزرگتر از 991px
+            navigation: {
+              enabled: true,
             },
-          }}
-        className="mySwiper h-auto md:h-[50vw] xl:h-[30vw] md:bg-gray-100 flex items-center justify-center "
+          },
+        }}
+        className={`mySwiper2 ${styles.big_swiper}`}
       >
-         <SwiperSlide className="">
-          <div className="flex flex-col md:flex-row items-center justify-center ">
-            <div className="translate-y-5 w-full md:w-1/2 lg:translate-y-0 flex flex-col items-center justify-center bg-gray-100 p-5" >
+        <SwiperSlide>
+          <div className={styles.swiperSlide}>
+            <div className={styles.swiperSlide__imgContent}>
               <Image
                 src="/assets/pics_products/p_6.png"
                 width={1000}
                 height={500}
                 priority={true}
                 alt="product slider"
-                className=" w-[56vw] lg:w-[45vw] xl:w-[30vw] object-cover"
+                className={styles.swiperSlide__img}
               />
             </div>
-            <div className="w-full  p-3 sm:p-5 bg-white md:bg-transparent    max-w-96 child:my-2 mt-5">
-              <p className="font-bold text-2xl">{t('slider1.name')}</p>
-              <ul className="child:list-disc child:ms-2 xs:child:ms-8 child:my-1 child:leading-7">
-                <li>{t('slider1.feature1')}</li>
-                <li>{t('slider1.feature2')}</li>
-                <li>{t('slider1.feature3')}</li>
-                <li>{t('slider1.feature4')}</li>
+            <div className={styles.swiperSlide__txtContent}>
+              <p className="font-bold sm:text-2xl lg:text-4xl lg:mb-4">{t("slider1.name")}</p>
+              <ul className={styles.listContent}>
+                <li>{t("slider1.feature1")}</li>
+                <li>{t("slider1.feature2")}</li>
+                <li>{t("slider1.feature3")}</li>
+                <li>{t("slider1.feature4")}</li>
               </ul>
             </div>
           </div>
-        </SwiperSlide> 
+        </SwiperSlide>
         <SwiperSlide>
-          <div className="flex flex-col md:flex-row items-center justify-center  ">
-            <div className="translate-y-5 lg:translate-y-0 flex flex-col items-center justify-center  bg-gray-100 p-5 w-full md:w-1/2">
+          <div className={styles.swiperSlide}>
+            <div className={styles.swiperSlide__imgContent}>
               <Image
                 src="/assets/pics_products/Picture311.png"
                 width={1000}
                 height={500}
                 alt="product slider"
-                className=" w-[56vw] lg:py-5 lg:w-[45vw] xl:w-[30vw] object-cover"
+                className={styles.swiperSlide__img}
               />
             </div>
-            <div className="w-full lg:w-auto p-3 sm:p-5 bg-white md:bg-transparent lg:bg-transparent    max-w-96 child:my-2 mt-5">
-              <p className="font-bold text-2xl">
-                {t('slider2.name')}
-              </p>
-              <ul className="child:list-disc child:ms-2 xs:child:ms-8 child:my-1 child:leading-7">
-                <li>{t('slider2.feature1')}</li>
-                <li>{t('slider2.feature2')}</li>
-                <li>{t('slider2.feature3')}</li>
-                <li>{t('slider2.feature4')}</li>
+            <div className={styles.swiperSlide__txtContent}>
+              <p className="font-bold sm:text-2xl lg:text-4xl lg:mb-4">{t("slider2.name")}</p>
+              <ul className={styles.listContent}>
+                <li>{t("slider2.feature1")}</li>
+                <li>{t("slider2.feature2")}</li>
+                <li>{t("slider2.feature3")}</li>
+                <li>{t("slider2.feature4")}</li>
               </ul>
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide >
-          <div className="flex flex-col md:flex-row items-center justify-center">
-            <div className="translate-y-5 lg:translate-y-0 flex flex-col items-center justify-center  bg-gray-100 p-5 w-full md:w-1/2">
+        <SwiperSlide>
+          <div className={styles.swiperSlide}>
+            <div className={styles.swiperSlide__imgContent}>
               <Image
                 src="/assets/pics_products/Camera.png"
                 width={1000}
                 height={500}
                 alt="product slider"
-                className=" w-[56vw] lg:w-[45vw] xl:w-[30vw] object-cover"
+                className={styles.swiperSlide__img}
               />
             </div>
-            <div className="w-full  p-3 sm:p-5 bg-white md:bg-transparent    max-w-96 child:my-2 mt-5">
-              <p className="font-bold text-2xl">
-                {t('slider3.name')}
-              </p>
-              <ul className="child:list-disc child:ms-2 xs:child:ms-8 child:my-1 child:leading-7">
-                <li> {t('slider3.feature1')} </li>
-                <li> {t('slider3.feature2')} </li>
-                <li> {t('slider3.feature3')} </li>
-                <li> {t('slider3.feature4')} </li>
-                <li> {t('slider3.feature5')} </li>
-                <li> {t('slider3.feature6')} </li>
-                <li> {t('slider3.feature7')} </li>
+            <div className={styles.swiperSlide__txtContent}>
+              <p className="font-bold sm:text-2xl lg:text-4xl lg:mb-4">{t("slider3.name")}</p>
+              <ul className={styles.listContent}>
+                <li> {t("slider3.feature1")} </li>
+                <li> {t("slider3.feature2")} </li>
+                <li> {t("slider3.feature3")} </li>
+                <li> {t("slider3.feature4")} </li>
+                <li> {t("slider3.feature5")} </li>
+                <li> {t("slider3.feature6")} </li>
+                <li> {t("slider3.feature7")} </li>
               </ul>
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="">
-          <div className="flex flex-col md:flex-row items-center justify-center ">
-            <div className="translate-y-5 lg:translate-y-0 flex flex-col items-center justify-center  bg-gray-100 p-5 w-full md:w-1/2">
-              <Image
-                src="/assets/pics_products/1-Spectrometer_1.png"
-                width={1000}
-                height={500}
-                alt="product slider"
-                className=" w-[56vw] lg:w-[45vw] xl:w-[30vw] object-cover"
-              />
+        <SwiperSlide >
+        <div className={styles.swiperSlide}>
+          <div className={styles.swiperSlide__imgContent}>
+            <Image
+              src="/assets/pics_products/1-Spectrometer_1.png"
+              width={1000}
+              height={500}
+              alt="product slider"
+              className={styles.swiperSlide__img}
+            />
             </div>
-            <div className="w-full  p-3 sm:p-5 bg-white md:bg-transparent    max-w-96 child:my-2 mt-5">
-              <p className="font-bold text-2xl">
-                {t('slider3.name')}
-              </p>
-              <ul className="child:list-disc child:ms-2 xs:child:ms-8 child:my-1 child:leading-7">
-                <li> {t('slider3.feature1')} </li>
-                <li> {t('slider3.feature2')} </li>
-                <li> {t('slider3.feature3')} </li>
+            <div className={styles.swiperSlide__txtContent}>
+              <p className="font-bold sm:text-2xl lg:text-4xl lg:mb-4">{t("slider3.name")}</p>
+              <ul className={styles.listContent}>
+                <li> {t("slider3.feature1")} </li>
+                <li> {t("slider3.feature2")} </li>
+                <li> {t("slider3.feature3")} </li>
               </ul>
             </div>
           </div>
         </SwiperSlide>
       </Swiper>
+
+      <div className="w-full mt-5 lg:me-16 max-w-xl">
+        <Swiper
+          onSwiper={setThumbsSwiper}
+          loop={true}
+          slidesPerView={4}
+          freeMode={true}
+          spaceBetween={10}
+          className={`mySwiper    ${styles.mini_Swiper}`}
+        >
+          <SwiperSlide>
+            <Image
+              src="/assets/pics_products/p_6.png"
+              width={1000}
+              height={500}
+              priority={true}
+              alt="product slider"
+              className="w-full h-full object-contain"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src="/assets/pics_products/Picture311.png"
+              width={1000}
+              height={500}
+              alt="product slider"
+              className="w-full h-full object-contain"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src="/assets/pics_products/Camera.png"
+              width={1000}
+              height={500}
+              alt="product slider"
+              className=" w-full h-full object-contain"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src="/assets/pics_products/1-Spectrometer_1.png"
+              width={1000}
+              height={500}
+              alt="product slider"
+              className="w-full h-full object-contain"
+            />
+          </SwiperSlide>
+        </Swiper>
+      </div>
     </div>
   );
 };

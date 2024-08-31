@@ -31,3 +31,12 @@
 .breadcrumb-item{
     @apply text-blue-600
 }
+
+/* swiper */
+.mySwiper .swiper-slide{
+    @apply opacity-40 bg-[#a1a1a1]
+}
+
+.mySwiper .swiper-slide-thumb-active{
+    @apply  opacity-100 bg-transparent
+}

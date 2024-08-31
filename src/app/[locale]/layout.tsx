@@ -1,11 +1,10 @@
 
-import  Navbar from '../../components/module/Newnavbar/Navbar'
-
+import  Navbar from '../../components/module/navbar/Navbar'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import {NextIntlClientProvider, useMessages} from 'next-intl';
 import {notFound} from 'next/navigation';
-import Footer from '@/components/module/newfooter/Footer'
+import Footer from '@/components/module/footer/Footer'
 import Head from 'next/head';
 import { ContextProvider } from '@/context/Context';
 

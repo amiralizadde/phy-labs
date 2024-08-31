@@ -1,11 +1,35 @@
+/* main page slider */
+.big_swiper {
+  @apply w-full  p-5  child:text-center max-h-none lg:child:max-h-96 bg-gradient-to-b from-[#a1b8d2];
+}
+
+.mini_Swiper {
+  @apply flex items-center justify-center  px-3 sm:px-0 border    child:text-center   child:h-[80px];
+}
+
+.swiperSlide {
+  @apply p-2 h-full  flex flex-col lg:flex-row items-start lg:items-center justify-start;
+}
+.swiperSlide__imgContent {
+  @apply p-2 md:h-72 lg:h-96  h-48 w-full lg:w-1/2;
+}
+.swiperSlide__img {
+  @apply p-2 w-full h-full object-contain;
+}
+.swiperSlide__txtContent {
+  @apply p-2 h-80 lg:h-auto text-start;
+}
+.swiperSlide__txtContent .listContent {
+  @apply child:list-decimal lg:child:list-disc child:text-sm sm:child:text-base md:child:font-medium child:ms-2 xs:child:ms-8 child:my-1 child:leading-7 sm:child:leading-8;
+}
 /* ____News_____ */
-.newsbox{
-    @apply relative shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer p-4
+.newsbox {
+  @apply relative shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer p-4;
 }
-.arrowbox::before{
-    content: "";
-    @apply w-[2px] h-4 absolute bottom-0 rotate-[30deg] -left-2 bg-primary
+.arrowbox::before {
+  content: "";
+  @apply w-[2px] h-4 absolute bottom-0 rotate-[30deg] -left-2 bg-primary;
 }
-.arrowbox{
-    @apply absolute right-2 bottom-2 text-xs 
+.arrowbox {
+  @apply absolute right-2 bottom-2 text-xs;
 }

@@ -1,48 +1,34 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import styles from "../../../styles/navbar/navbar.module.css";
-import { FiMenu } from "react-icons/fi";
-import { FaUser } from "react-icons/fa";
-import { menuTypes } from "@/types/menuTypes";
-import NavbarItems from "./NavbarItems";
-import { IoIosSearch } from "react-icons/io";
-import { IoIosClose } from "react-icons/io";
-import { MdArrowForwardIos } from "react-icons/md";
-import { useLocale } from "next-intl";
-import Menu from "./Menu";
-import Link from "next/link";
-
-import { useTranslations } from "next-intl";
 import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import { CgMenu } from "react-icons/cg";
+import { MdOutlineSearch } from "react-icons/md";
+import { MdLocalPhone } from "react-icons/md";
+import { IoMdClose } from "react-icons/io";
+import { FaIdCardAlt } from "react-icons/fa";
+import { MdOutlineLanguage } from "react-icons/md";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import styles from "../../../styles/navbar/navbar.module.css";
+import { useLocale, useTranslations } from "next-intl";
+import { IoIosArrowForward } from "react-icons/io";
 import { product } from "@/types/productTypes";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const [isShowSearchbox, setIsShowSearchbox] = useState<boolean>(false);
   const [isShowSidebar, setIsShowSidebar] = useState<boolean>(false);
-  const [isShowSearchBox, setIsShowSearchBoxr] = useState<boolean>(false);
-  const [menuData, setMenuData] = useState<menuTypes[]>();
-  const sidebarRef = useRef<HTMLDivElement>(null);
-  const locale = useLocale();
-  const t = useTranslations("navbar");
-  const tSearch = useTranslations("search");
-
-  const sidebarAnimation = () => {
-    sidebarRef.current &&
-      sidebarRef.current.style.animationDirection === "reverse";
-  };
-
-  const AboutDataEn = [
-    { _id: "1", locale: "en", headline: "Company Members", products: [] },
-    { _id: "2", locale: "en", headline: "Company History", products: [] },
-  ];
-  const AboutDataFa = [
-    { _id: "1", locale: "fa", headline: " اعضای هیات مدیره ", products: [] },
-    { _id: "2", locale: "fa", headline: " تاریخچه شرکت ", products: [] },
-  ];
-
   const [allCategory, setAllCategory] = useState<product[] | null>(null);
+  const locale = useLocale();
+  const router = useRouter();
+  const t = useTranslations("navbar");
+  const tsearch = useTranslations("search");
 
   useEffect(() => {
     getAllProducts();
+    if (window.innerWidth >= 1024) {
+      setIsShowSearchbox(true);
+    }
   }, []);
 
   const getAllProducts = async () => {
@@ -60,190 +46,256 @@ const Navbar = () => {
   };
 
   return (
-    <div className={styles.navbar}>
-      <div className=" w-full h-full flex flex-col items-center justify-center p-2 ">
-        <div className={styles.navbar__content}>
-          {/* search */}
-          <div
-            className="lg:hidden cursor-pointer"
-            onClick={() => setIsShowSearchBoxr(!isShowSearchBox)}
-          >
-            {isShowSearchBox ? (
-              <IoIosClose className="text-2xl cursor-pointer" />
-            ) : (
-              <IoIosSearch className="text-2xl cursor-pointer" />
-            )}
-          </div>
-          <div className="">
+    <div className="relative">
+      <div className="">
+        {/* pc */}
+        <div className="hidden lg:block mt-3">
+          <div className="px-10 xl:px-32 pb-3 flex items-end justify-between">
+            {/* phy-labs logo */}
             <Link href={`/${locale}/`}>
-              <Image
-                src="/assets/logo/PhyLabs.png"
-                width={1000}
-                height={500}
-                alt="phy_labs logo"
-                className="w-[60px] h-auto"
-              />
+              <div className=" h-full cursor-pointer">
+                <Image
+                  src="/assets/logo/PhyLabs.png"
+                  width={1000}
+                  height={500}
+                  alt="phy-labs logo"
+                  className=" lg:h-24 lg:w-24 object-contain"
+                />
+              </div>
             </Link>
-          </div>
-          <div className={styles.navabrItems__content}>
-            <div className={styles.menu__content}>
-              <ul>
-                <li className={styles.menuItem}>
-                  <Link href={`/${locale}/`}>
-                    <span>{t("home")}</span>
-                  </Link>
-                </li>
-                <li className={styles.menuItem}>
-                  <Link
-                    href={`/${locale}/products`}
-                    className="flex items-center justify-between"
-                  >
-                    <span>{t("products")}</span>
-                    <MdArrowForwardIos className={styles.arrowSubroutes} />
-                  </Link>
-                  {allCategory?.length ? (
-                    <div className={styles.submenu}>
-                      {allCategory?.map((categoryItem) => (
-                        <Menu key={categoryItem._id} menu={categoryItem} />
-                      ))}
-                    </div>
-                  ) : (
-                    ""
-                  )}
-                </li>
-                <li className={styles.menuItem}>
-                  <Link href={`/${locale}/services`}>
-                    <span>{t("services")}</span>
-                  </Link>
-                </li>
-                <li className={styles.menuItem}>
-                  <Link href={`/${locale}/news`}>
-                    <span>{t("news")}</span>
-                  </Link>
-                </li>
-                <li className={styles.menuItem}>
-                  <Link href={`/${locale}/about/companyMembers`}>
-                    <span>{t("about")}</span>
-                  </Link>
-                  <div className={styles.submenu}>
-                    <ul className="flex items-center justify-center child:text-black child:mx-3">
-                      <li>
-                        <Link href={`/${locale}/about/companyMembers`}>
-                          {locale === "en" ? "Company Members" : " اعضای هیات مدیره  "}
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href={`/${locale}/about/companyHistory`}>
-                        {locale === "en" ? "Company History" : " تاریخچه شرکت  "}
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li className={styles.menuItem}>
-                  <Link href={`/${locale}/contact`}>
-                    <span>{t("contact")}</span>
-                  </Link>
-                </li>
 
-                {/* { menuData?.map((menuItem) => (
-                  <div key={menuItem.id}>
-                    <li  className={styles.menuItem}>
-                      <Link href={`/${locale}/${menuItem.route}`} className="flex items-center justify-between"><span>{menuItem.menuTitle}</span>
-                        {menuItem.category && (
-                          <MdArrowForwardIos className={styles.arrowSubroutes} />
-                        )}
-                      </Link>
-                    </li>
-                    {menuItem.category && (
-                      <div className={styles.submenu}>
-                        {menuItem.category?.map((categoryItem) => (
-                          <Menu key={categoryItem.id} menu={categoryItem} />
-                        ))}
+            <div className=" h-full ">
+              <div className="">
+                {/* top navbar   */}
+                <ul className="flex items-center justify-end child:mx-2 child:text-xs child:text-gray-900">
+                  <li className="text-xs hover:border-b hover:border-b-black hover:text-black ">
+                    <Link href={`/${locale}/auth/identification`}>
+                      <p>
+                        <span className="">{t("Signin")}</span>
+                        <span className="mx-1">/</span>
+                        <span className="">{t("Register")}</span>
+                      </p>
+                    </Link>
+                  </li>
+                  <span>|</span>
+                  <li className="text-xs flex items-center">
+                    <FaIdCardAlt className="text-sm mx-1" />
+                    <span>Careers</span>
+                  </li>
+                  <li className="text-xs flex items-center ">
+                    <MdOutlineLanguage className="text-sm mx-1" />
+                    <span
+                      onClick={(e) => router.replace(`/fa`)}
+                      className="hover:underline hover:cursor-pointer"
+                    >
+                      Persian
+                    </span>
+                    <span>/</span>
+                    <span
+                      onClick={(e) => router.replace(`/en`)}
+                      className="hover:underline hover:cursor-pointer"
+                    >
+                      English
+                    </span>
+                  </li>
+                  <span>|</span>
+                  <li className="flex items-center child:text-base child:font-bold">
+                    <MdLocalPhone className="w-5 h-5 mx-2 text-blue-900" />
+                    <span>{t("phone")}</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="mt-7  child:text-sm">
+                {/* bottom navbar list menu */}
+                <ul className="flex items-center justify-end child:ps-10  child:py-3">
+                  <li className={styles.menuItem}>
+                    <Link href={`/${locale}/products`}>
+                      <span className="font-bold">{t("products")}</span>
+                    </Link>
+                    <MdOutlineKeyboardArrowDown className="w-7 h-5 text-primary" />
+                    {allCategory && (
+                      <div className={styles.menuItem__content}>
+                        <div className={styles.menuItem__background}>
+                          <div className={styles.menuItem__parent}>
+                            {allCategory.map((category) => (
+                              <>
+                                {category.headline !== "Opto Mechanics" ? (
+                                  <div className=" min-h-40" key={category._id}>
+                                    <p className={styles.headline}>
+                                      {category.headline}
+                                    </p>
+                                    {category.products.map((product, index) => (
+                                      <Link
+                                        href={`/${locale}/${category.headline.toLowerCase()}/${
+                                          product.URL
+                                        }`}
+                                      >
+                                        <div key={index} className="mt-2">
+                                          <span className={styles.nameProduct}>
+                                            {product.name}
+                                          </span>
+                                        </div>
+                                      </Link>
+                                    ))}
+                                  </div>
+                                ) : (
+                                  <div className=" min-h-40 col-span-12">
+                                    <p className={styles.headline}>
+                                      {category.headline}
+                                    </p>
+                                    <div className="grid grid-cols-6">
+                                      {category.products.map(
+                                        (product, index) => (
+                                          <Link
+                                            href={`/${locale}/opto_mechanics/${
+                                              product._id
+                                            }`}
+                                          >
+                                            <div
+                                              key={index}
+                                              className="mt-2   "
+                                            >
+                                              <span
+                                                className={styles.nameProduct}
+                                              >
+                                                {product.name}
+                                              </span>
+                                            </div>
+                                          </Link>
+                                        )
+                                      )}
+                                    </div>
+                                  </div>
+                                )}
+                              </>
+                            ))}
+                            {/* Edit */}
+                            {/* <div className="">
+                                                            <p className="font-bold">Shop</p>
+                                                                
+                                                                <div className="mt-2">
+                                                                    <Link href={`/${locale}/optoMechanic`}><span className="text-sm font-medium hover:text-primary">Go to shop</span></Link>
+                                                                </div>
+                                                                  
+                                                     </div> */}
+                          </div>
+                        </div>
                       </div>
                     )}
-                  </div>
-                ))} */}
-              </ul>
-            </div>
-
-            <div className="flex items-center justify-end">
-              
-              <span className="mx-3 ">
-                <Link href={`/${locale}/signin`}>
-                  <FaUser className="cursor-pointer" />
-                </Link>
-              </span>
-              <div
-                className="cursor-pointer "
-                onClick={() => setIsShowSearchBoxr(!isShowSearchBox)}
-              >
-                {isShowSearchBox ? (
-                  <IoIosClose className="text-2xl" />
-                ) : (
-                  <IoIosSearch className="text-2xl" />
-                )}
+                  </li>
+                  <li className="font-bold">{t("downloads")}</li>
+                  <Link href={`/${locale}/services`}>
+                    <li className="font-bold">{t("services")}</li>
+                  </Link>
+                  {/* <li className={styles.menuItem}>
+                                <span className="font-bold">{t('about')}</span>
+                                <MdOutlineKeyboardArrowDown className="w-7 h-5 text-primary"/>
+                                <div  className={styles.menuItem__content}>
+                                    <div className={styles.menuItem__background}>
+                                        <div className={styles.menuItem__parent}>
+                                               <Link href={`/${locale}/about/companyMembers`}>
+                                                 <div className="font-bold hover:text-primary">
+                                                        <Image src='/assets/company-members.jpg' width={500} height={200} alt="compant members " className="h-28 w-56 object-cover"/>
+                                                        <p className="hover:text-primary text-xs flex items-center mt-3" >
+                                                            <span>{t('company-members')}</span>
+                                                            <IoIosArrowForward  className="mx-3"/>
+                                                        </p>
+                                                  </div>
+                                                </Link>
+                                            <Link href={`/${locale}/about/companyHistory`}>
+                                                <div className="font-bold mx-10 hover:text-primary">
+                                                    <Image src='/assets/company-history.jpg' width={500} height={200} alt="compant members " className="h-28 w-56 object-cover"/>
+                                                    <p className="hover:text-primary text-xs flex items-center mt-3" >
+                                                        <span>{t('company-history')}</span>
+                                                        <IoIosArrowForward  className="mx-3"/>
+                                                    </p>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li> */}
+                  <li className="font-bold">{t("sustainability")}</li>
+                  <Link href={`/${locale}/contact`}>
+                    <li className="font-bold">{t("contact")}</li>
+                  </Link>
+                </ul>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* collaps menu */}
-          <div className="lg:hidden">
-            {/* menuicon */}
-            <div
-              className="bg-primary p-1 rounded-sm cursor-pointer"
+        {/* mobile */}
+        <div className="lg:hidden mt-3 flex items-center justify-between px-4 w-full">
+          <div className="flex">
+            <CgMenu
+              className="w-6 h-6"
               onClick={() => setIsShowSidebar(!isShowSidebar)}
-            >
-              <FiMenu className="text-white" />
-            </div>
+            />
+            {isShowSearchbox ? (
+              <IoMdClose
+                className="w-6 h-6 ms-6 cursor-pointer"
+                onClick={() => setIsShowSearchbox(!isShowSearchbox)}
+              />
+            ) : (
+              <MdOutlineSearch
+                className="w-6 h-6 ms-6 cursor-pointer"
+                onClick={() => setIsShowSearchbox(!isShowSearchbox)}
+              />
+            )}
+          </div>
+          <div>
+            <Image
+              src="/assets/logo/PhyLabs.png"
+              width={1000}
+              height={500}
+              alt="phy-labs logo"
+              className="h-14 w-14 lg:h-20 lg:w-20 object-contain"
+            />
+          </div>
+          <div>
+            <MdLocalPhone className="w-5 h-5 text-blue-900" />
           </div>
         </div>
-        {/* {isShowSearchBox && ( */}
-        <div
-          className={`${
-            isShowSearchBox ? "w-full h-12 py-2 lg:w-3/4" : "w-0 h-0 p-0"
-          }   bg-primary2 border-black rounded-full mt-2 overflow-hidden flex items-end justify-between   relative transition-all duration-500`}
-        >
-          <input
-            type="text"
-            placeholder={tSearch("placeholder")}
-            className="w-full py-1 bg-transparent  px-4 outline-none  placeholder:text-sm text-sm"
-          />
-          <IoIosSearch
-            className={`text-2xl cursor-pointer  -translate-y-1 ${
-              locale === "en" ? "-translate-x-2" : "translate-x-2"
-            }`}
-          />
-        </div>
-        {/* )} */}
 
-        {/* collaps content */}
+        {/* searchbox */}
 
-        <aside
-          className={`${styles.collapsMenu__content} ${
-            isShowSidebar
-              ? locale === "en"
-                ? "left-0"
-                : "right-0"
-              : locale === "en"
-              ? "-left-[150vw]"
-              : "-right-[150vw]"
-          }`}
-        >
-          <ul className="">
-            <NavbarItems menuTitle={t("home")} category={null} />
-            <NavbarItems menuTitle={t("products")} category={allCategory} />
-            <NavbarItems menuTitle={t("services")} category={null} />
-            <NavbarItems menuTitle={t("news")} category={null} />
-            <NavbarItems menuTitle={t("contact")} category={null} />
-            <NavbarItems
-              menuTitle={t("about")}
-              category={locale === "en" ? AboutDataEn : AboutDataFa}
-            />
-          </ul>
-          <div>SignIn/SignUp</div>
-        </aside>
+        {isShowSearchbox && (
+          <div className="bg-primary2 py-3 px-5">
+            <div>
+              <form className="flex items-center bg-white rounded lg:mx-10 xl:mx-32">
+                <MdOutlineSearch className="w-6 h-6 ms-5" />
+                <input
+                  type="text"
+                  className="w-full p-3 text-sm outline-none rounded"
+                  placeholder={tsearch("placeholder")}
+                />
+              </form>
+            </div>
+          </div>
+        )}
       </div>
+
+      {/* collaps content */}
+
+      {isShowSidebar && (
+        <aside className={styles.aside__content}>
+          <ul className="child:flex child:items-center child:justify-start child:border-b child:border-black/25 child:p-3 child:font-medium">
+            <li>
+              <span>Products</span>
+              <IoIosArrowForward className="mx-2 text-primary" />
+            </li>
+            <li>Downloads</li>
+            <li>Services</li>
+            <li>
+              <span>About</span>
+              <IoIosArrowForward className="mx-2 text-primary" />
+            </li>
+            <li>Sustainability</li>
+            <li>Contact</li>
+          </ul>
+        </aside>
+      )}
     </div>
   );
 };

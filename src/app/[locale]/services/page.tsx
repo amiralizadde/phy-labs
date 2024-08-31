@@ -30,7 +30,7 @@ const Services = () => {
       </div>
 
       {/* servises */}
-      <div className="w-3/5 mx-auto  grid grid-cols-2   gap-10 child:p-5 ">
+      <div className="w-full mx-auto  grid grid-cols-1  sm:grid-cols-2 md:w-4/5 lg:w-3/5   sm:gap-10  child:p-5 ">
         <Link href={`/${locale}/services/NanoProfilometer`}>
           <div className="flex flex-col items-center justify-between h-full py-3 hover:cursor-pointer hover:shadow-lg hover:scale-105 transition-all duration-200">
             <div>
