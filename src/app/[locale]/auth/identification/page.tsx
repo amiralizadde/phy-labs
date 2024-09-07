@@ -1,5 +1,3 @@
-
-
 import EmailIdentification from "@/components/template/auth/EmailIdentification";
 import { FaRegCheckCircle } from "react-icons/fa";
 
@@ -8,7 +6,7 @@ const Identification = () => {
   return (
     <div className='bg-[#fafafa] p-10 flex  justify-center'>
 
-        <div className='w-2/4 '>
+        <div className='w-2/4'>
             <div className='text-5xl  mb-20 font-bold text-start text-[#2e3133]'>Sign In / Register</div>
             <div className='text-3xl  mb-10 font-semibold leading-6 text-start text-[#2e3133]'>Please Enter Your Email Address</div>
             <div>

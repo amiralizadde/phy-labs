@@ -31,6 +31,8 @@ export async function POST(req: Request) {
 
     const token =await generateToken({ email: user.email });
 
+    //refresh token
+
     return Response.json(
       { message: "User loggedIn Successfully ..." },
       { status: 200, headers: { "Set-Cookie": `token=${token};path=/;httpOnly=true` } }

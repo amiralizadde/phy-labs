@@ -148,7 +148,7 @@ const Navbar = () => {
                                         (product, index) => (
                                           <Link
                                             href={`/${locale}/opto_mechanics/${
-                                              product._id
+                                              product.URL
                                             }`}
                                           >
                                             <div
@@ -158,7 +158,7 @@ const Navbar = () => {
                                               <span
                                                 className={styles.nameProduct}
                                               >
-                                                {product.name}
+                                                {product.URL}
                                               </span>
                                             </div>
                                           </Link>
@@ -169,15 +169,6 @@ const Navbar = () => {
                                 )}
                               </>
                             ))}
-                            {/* Edit */}
-                            {/* <div className="">
-                                                            <p className="font-bold">Shop</p>
-                                                                
-                                                                <div className="mt-2">
-                                                                    <Link href={`/${locale}/optoMechanic`}><span className="text-sm font-medium hover:text-primary">Go to shop</span></Link>
-                                                                </div>
-                                                                  
-                                                     </div> */}
                           </div>
                         </div>
                       </div>

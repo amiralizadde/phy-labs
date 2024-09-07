@@ -1,0 +1,10 @@
+.scrollTop,
+.scrollTop__active{
+    @apply  bottom-10 left-5 rounded-full shadow-[0_3px_3px_0px_rgba(0,0,0)] text-slate-700 text-3xl bg-white font-light z-50
+}
+.scrollTop{
+    @apply hidden
+}
+.scrollTop__active{
+    @apply fixed
+}

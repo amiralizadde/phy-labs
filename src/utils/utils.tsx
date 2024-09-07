@@ -22,7 +22,7 @@ const verifyPassword = async (password: string, hashedpassword: string) => {
   return isValid;
 };
 
-const verifyToken = (token:string) => {
+const verifyToken = (token: string) => {
   try {
     const validationResult = verify(token, process.env.privateKey!);
     return validationResult;
@@ -31,7 +31,15 @@ const verifyToken = (token:string) => {
     return false;
   }
 };
-const onError = (err:any, req:any, res:any, next :any) => {
+
+const refreshToken = (data: generateTokenType) => {
+  const token = sign({ ...data }, process.env.refreshTokenSecretKey!, {
+    expiresIn: "15d",
+  });
+  return token;
+};
+
+const onError = (err: any, req: any, res: any, next: any) => {
   err.statusCode = err.statusCode || 500;
   let error = { ...err };
   error.message = err.message;
@@ -42,4 +50,29 @@ const onError = (err:any, req:any, res:any, next :any) => {
   });
 };
 
-export { hashPassword, generateToken ,verifyPassword,verifyToken,onError};
+const validateName = (name: string) => {
+  const pattern = /^[a-z0-9_-]{3,15}$/g;
+
+  return pattern.test(name);
+};
+const validateEmail = (email: string) => {
+    const regex = /^[\w-]+(?:\.[\w-]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7}$/g;
+    return regex.test(email);
+};
+const validatePassword = (password: string) => {
+  const pattern =
+    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/g;
+  return pattern.test(password);
+};
+
+export {
+  hashPassword,
+  generateToken,
+  verifyPassword,
+  verifyToken,
+  onError,
+  refreshToken,
+  validateName,
+  validateEmail,
+  validatePassword,
+};

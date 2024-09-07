@@ -7,6 +7,8 @@ import {notFound} from 'next/navigation';
 import Footer from '@/components/module/footer/Footer'
 import Head from 'next/head';
 import { ContextProvider } from '@/context/Context';
+import ScrollToTop from '@/components/module/scrollToTop/ScrollToTop';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -31,6 +33,7 @@ export default function RootLayout({ children, params: {locale}}:{ children: Rea
             {children}
           </div>
         <Footer />
+        <ScrollToTop />
         </ContextProvider>
       </NextIntlClientProvider>
       </body>

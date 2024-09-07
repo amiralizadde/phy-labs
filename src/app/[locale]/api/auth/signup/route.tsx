@@ -4,8 +4,6 @@ import { generateToken, hashPassword } from "@/utils/utils";
 import { userType } from "@/types/authTypes";
 
 export async function POST(req: Request) {
-  
-  
   try {
     connectToDB();
     const body = await req.json();
@@ -32,7 +30,7 @@ export async function POST(req: Request) {
     const hashedpassword = await hashPassword(password);
 
     // generate token
-    const token =await generateToken({ email });
+    const token = await generateToken({ email });
 
     const users: userType[] = await Usermodel.find({});
     await Usermodel.create({
@@ -42,8 +40,17 @@ export async function POST(req: Request) {
       role: users?.length > 0 ? "USER" : "ADMIN",
     });
 
-    return Response.json({ message: "Create user Successfully ..." },{ status: 201 ,headers: { 'Set-Cookie': `token=${token};path=/;httpOnly=true`}})
+    return Response.json(
+      { message: "Create user Successfully ..." },
+      {
+        status: 201,
+        headers: { "Set-Cookie": `token=${token};path=/;httpOnly=true` },
+      }
+    );
   } catch (error) {
-    return Response.json({message: "Unknown Internal Server Error ..." , error},{status:500});
+    return Response.json(
+      { message: "Unknown Internal Server Error ...", error },
+      { status: 500 }
+    );
   }
 }
